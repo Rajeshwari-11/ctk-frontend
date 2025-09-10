@@ -1,0 +1,70 @@
+.signup {
+    background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100vw;   
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+.signup-maincontainer {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    
+}
+
+.signup-formcontainer {
+    padding:20px;
+    width: 100%;
+    max-width: 400px;
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    border: #e64833 2px solid;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.signup-button {
+    background-color: #e64833;
+    border-color: #e64833;
+}
+
+@media (max-width:426px)
+{
+    .signup-maincontainer{
+        width:auto;
+        margin-left:20px;
+        margin-right:-40px;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .signup-formcontainer{
+        width:70%;
+        margin-left:20px;
+        margin-right:20px;
+    }
+}
+
+@media (max-width: 780px) and (min-width: 426px) {
+  
+    .signup-maincontainer{
+        width:auto;
+        margin-left:20px;
+        margin-right:-40px;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    .signup-formcontainer{
+        width:70%;
+        margin-left:20px;
+        margin-right:20px;
+    }
+}

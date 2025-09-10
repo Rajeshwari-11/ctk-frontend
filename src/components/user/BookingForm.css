@@ -1,0 +1,135 @@
+.booking {
+    background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+}
+ 
+.booking-main-container {
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust as needed */
+}
+ 
+.booking-form-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border: #e64833 2px solid;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+ 
+.booking-form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+ 
+.booking-form {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.booking-form div {
+    margin-bottom: 15px;
+}
+ 
+.booking-form label {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.booking-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+ 
+.booking-formbutton {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    color: #fff;
+    background-color: #e64833;
+    border-radius: 5px;
+    border: 1px solid #e64833;
+}
+ 
+.booking-formbutton:hover{
+    background-color: #c82614;
+ 
+}
+ 
+.confirmation-container{
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border: #e64833 2px solid;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+}
+ 
+.confirmation-container h1{
+    text-align: center;
+}
+ 
+.confirmation-container div>p{
+    color:#fff;
+    font-size:20px;
+}
+ 
+.confirmation-container div>div{
+    display: flex;
+    justify-content: center;
+}
+ 
+.confirmation-container div>div>button{
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    color: #fff;
+    background-color: #e64833;
+    border-radius: 5px;
+    border: 1px solid #e64833;
+    margin:10px;
+}
+ 
+.confirmation-container div>div>button:hover{
+    background-color: #c82614;
+ 
+}
+ 
+@media (max-width:480px){
+    .booking-form-container{
+        margin-left: 80px;
+        margin-right:20px;
+    }
+ 
+    .booking-form{
+        font-size: 12px;
+    }
+}

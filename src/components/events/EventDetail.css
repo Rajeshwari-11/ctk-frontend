@@ -1,0 +1,168 @@
+.event{
+  background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.event-details-container{
+  margin-top: 40px;
+  margin-left: 80px;
+  margin-bottom: 55px;
+  margin-right: 30px;
+  border: #e64833 2px solid;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+.event-details-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+.event-details-image {
+  width: 80%;
+  height: 400px;
+  /* object-fit: contain; ✅ shows whole image */
+  border-radius: 8px;
+}
+
+.event-details-info {
+  width: 70%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff9d;
+  border-radius: 8px;
+  text-align: left;
+  color: #000;
+}
+ 
+.event-details-info h2 {
+  margin-bottom: 15px;
+  text-align:center;
+}
+ 
+.event-details-info p {
+  margin: 10px 0;
+  color:#000;
+}
+.event-description {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.event-details{
+  display: flex;
+  flex-flow: row;
+}
+
+.event-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+ 
+.event-buttons .back-button {
+  padding: 10px 20px;
+  background-color: #000000bb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.event-buttons .back-button:hover {
+  background-color: #E64833;
+}
+
+.event-buttons .action-button {
+  padding: 10px 20px;
+  background-color: #000000bb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-buttons .action-button:hover {
+  background-color: #E64833;
+}
+ 
+.event-buttons .book-ticket-button {
+  padding: 10px 20px;
+  background-color: #000000bb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+ 
+.event-buttons .book-ticket-button:hover {
+  background-color: #E64833;
+}
+.expired-events-btn{
+  margin-right: 20px;
+}
+
+@media (max-width:426px){
+  .event-details-top{
+    flex-direction: column;
+  }
+
+  .event-details-image{
+    width:100%;
+  }
+
+  .event-details-info,
+  .event-details-info p{
+    width:100%;
+    font-size: 13px;
+  }
+
+  .event-buttons{
+    margin-top: 5px;
+    gap:5px;
+  }
+
+
+}
+
+@media (max-width: 780px) and (min-width: 426px) {
+  .event-details-top{
+    flex-direction: row;
+  }
+
+  .event-details-image{
+    width:50%;
+  }
+
+  .event-details-info,
+  .event-details-info p{
+    width:100%;
+    font-size: 13px;
+  }
+
+  .event-buttons{
+    margin-top: 5px;
+    gap:5px;
+  }
+
+}

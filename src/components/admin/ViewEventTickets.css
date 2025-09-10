@@ -1,0 +1,258 @@
+.background {
+    background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.view-tickets-container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 1260px; /* Max width of the container */
+    width: 80%; /* Use a percentage for responsiveness, up to max-width */
+    text-align: center;
+    border: #E64833 2px solid;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    margin-left: 80px;
+    margin-right: 25px;
+    z-index: 1;
+}
+
+.back-arrow-button {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    background-color: transparent;
+    border: none;
+    font-size: 45px; /* Adjust size of arrow */
+    color: #e64833; /*  Color of the arrow */
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bolder;
+    z-index: 10; /* Ensure it's above other content if necessary */
+  }
+   
+  .back-arrow-button:hover {
+    color: #fff; /* Change color on hover */
+  }
+
+.view-tickets-header {
+    text-align: center;
+    margin-top: 0; /* Reset margin if back-arrow-button is inside or handled differently */
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.event-info-header {
+    color: #fff;
+    text-align: center;
+    margin-top: -10px; /* Adjust to bring it closer to the header */
+    margin-bottom: 15px;
+    font-size: 0.95em;
+    line-height: 2;
+}
+
+.event-info-header p {
+    margin: 5px 0;
+    padding: 0 10px; /* Add some horizontal padding */
+}
+
+/* Uncomment if you still want the description */
+/* .view-tickets-description { ... } */
+
+
+.slider-wrapper {
+    display: flex; /* Arrange arrows and card container in a row */
+    align-items: center; /* Vertically center arrows with the card container */
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px; /* Optional: space between arrows and card container */
+    position: relative; /* Keep for potential future absolute positioning needs if any */
+}
+
+
+
+
+.slider-arrow {
+    /* position: absolute; Remove absolute positioning */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    background-color: transparent; /* Remove background color */
+    color: #e64833; /* Use theme color for the arrow character */
+    border: none;
+    /* border-radius: 50%; Remove circular shape */
+    width: auto; /* Adjust width to content */
+    height: auto; /* Adjust height to content */
+    padding: 5px 10px; /* Add some padding around the arrow character */
+    font-size: 36px; /* Make arrow character larger */
+    font-weight: bold; /* Make arrow character bolder */
+    cursor: pointer;
+    z-index: 1; /* Keep z-index in case of overlap, though less likely now */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.2); Remove box shadow */
+    transition: color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.slider-arrow:hover {
+    color: #d33a28; /* Darker theme color on hover */
+}
+
+
+.bookings-card-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling for JS-triggered scrolls */
+    gap: 10px; /* Space between cards */
+    padding: 10px 0;
+}
+
+.bookings-card-container::-webkit-scrollbar {
+    display: none;
+  }
+.booking-card {
+    flex: 0 0 287px; /* Each card will be 300px wide. Adjust this value as needed. */
+                     /* Cards will not shrink or grow from this basis. */
+    background-color: #fff; /* White background for the card */
+    border: 1px solid #e64833; /* Theme red border */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #000; /* Black text color */
+    overflow: hidden; /* Ensures border-radius applies to children if needed */
+    transition: transform 0.2s ease-in-out;
+    text-align: left;
+    max-width: 287px;
+    margin-left: 10px;
+}
+
+.booking-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.booking-card .card-header {
+    background-color: #e64833; /* Theme red for card header */
+    color: #fff; /* White text for card header */
+    padding: 12px 15px;
+    border-bottom: 1px solid #d33a28; /* Darker shade of theme red */
+}
+
+.booking-card .card-header h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.booking-card .card-body {
+    padding: 15px;
+}
+
+.booking-card .card-body p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.booking-card .card-body p strong {
+    color: #333; /* Slightly darker color for labels */
+}
+
+.no-bookings-message, .loading-message, .error-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.error-message {
+    color: red;
+}
+
+@media (max-width:426px){
+
+    .view-tickets-container{
+        background-color: rgba(0, 0, 0, 0.4); 
+        backdrop-filter: blur(4px); 
+        border-radius: 10px;
+        border: #E64833 2px solid;
+        margin-top:20px;
+        margin-bottom:20px;
+        margin-left:80px;
+        margin-right:20px;
+    }
+
+    .back-arrow-button{
+        top:-20px;
+        font-size: 40px;
+    }
+
+    .event-info-header p{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bookings-card-container {
+        display: flex;
+        flex-direction: row; /* Keep cards in a horizontal row */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical overflow */
+        gap: 15px; /* Space between cards */
+        padding: 10px 0;
+        scroll-behavior: smooth; /* Smooth scrolling for horizontal scroll */
+        width: 100%; /* Full width of the container */
+      }
+    
+      .booking-card {
+        flex: 0 0 100%; /* Each card takes up 100% of the container width */
+        max-width: 100%; /* Prevent cards from exceeding the container width */
+      }
+}
+
+@media (max-width: 780px) and (min-width: 426px) {
+    .view-tickets-container{
+        background-color: rgba(0, 0, 0, 0.4); 
+        backdrop-filter: blur(4px); 
+        border-radius: 10px;
+        border: #E64833 2px solid;
+        margin-top:20px;
+        margin-bottom:20px;
+        margin-left:80px;
+        margin-right:20px;
+    }
+
+    .back-arrow-button{
+        top:-20px;
+        font-size: 40px;
+    }
+
+    .event-info-header p{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bookings-card-container {
+        display: flex;
+        flex-direction: row; /* Keep cards in a horizontal row */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical overflow */
+        gap: 15px; /* Space between cards */
+        padding: 10px 0;
+        scroll-behavior: smooth; /* Smooth scrolling for horizontal scroll */
+        width: 100%; /* Full width of the container */
+      }
+    
+      .booking-card {
+        flex: 0 0 48%; /* Each card takes up 100% of the container width */
+        max-width: 100%; /* Prevent cards from exceeding the container width */
+      }
+  
+
+}

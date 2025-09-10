@@ -1,0 +1,264 @@
+/* Basic Reset and Global Styles */
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  /* General Body Styling to push content below fixed navbar */
+  body {
+    margin: 0; /* Reset default body margin to prevent extra space */
+      padding-top: 56px; /* Adjust based on your top-navbar height */
+    }
+    /* Top Navbar Styling */
+    .top-navbar {
+      background-color: #212529; /* Dark background */
+      color: #fff;
+      padding: 0.5rem 1rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1030;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px; /* Fixed height */
+    }
+    
+    .top-navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 0 15px; /* Or match your container-fluid padding */
+    }
+    
+    .top-navbar-left {
+      display: flex;
+      align-items: center;
+    }
+    
+    .hamburger-button {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.875rem;
+      border-radius: 0.2rem;
+      cursor: pointer;
+      margin-right: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 36px;
+      height: 30px;
+    }
+    
+    .hamburger-icon-bar {
+      width: 100%;
+      height: 4px;
+      background-color: #fff;
+      display: block;
+    }
+    
+    .top-navbar-brand {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      font-weight: bold;
+      background-color: none;
+    }
+    
+    .top-navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .icon-button {
+      background: none;
+      border: none;
+      color: #f8f9fa; 
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    
+    .icon-button:hover {
+      color: #adb5bd;
+    }
+    
+    .navbar-top-icon {
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .nav-button {
+      background: none;
+      border: none;
+      color: #f8f9fa; /* text-light */
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.5rem 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-button:hover {
+      color: #adb5bd;
+    }
+    
+    .top-nav-link {
+      color: #f8f9fa; /* text-light */
+      text-decoration: none;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .top-nav-link:hover {
+      color: #adb5bd;
+    }
+    
+    .top-nav-link.active-top {
+      color: #e64833;
+      border-bottom: 4px solid #e64833;
+    }
+    
+    /* Vertical Navbar Styling */
+    .vertical-navbar {
+      background-color: #212529; /* Dark background */
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      z-index: 999; /* Below top-navbar if it has higher z-index for overlays */
+      transition: width 0.3s ease-in-out;
+      padding-top: 66px; /* Height of top-navbar + some_padding */
+      /* overflow-x: hidden; Hide horizontal scrollbar during transition */
+    }
+    
+    .vertical-navbar.collapsed {
+      width: 60px; /* w-16 equivalent */
+    }
+    
+    .vertical-navbar.expanded {
+      width: 200px; /* Reduced width, adjust as needed */
+    }
+    
+    .vertical-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .vertical-nav-item {
+      position: relative; /* For tooltip positioning */
+    }
+    
+    .vertical-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px; /* Adjust padding */
+      color: #f8f9fa;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      position: relative; /* For tooltip positioning context */
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    /* .vertical-nav-link:hover {
+      background-color: #343a40;
+      color: #fff;
+    } */
+    
+    .vertical-nav-link.active-vertical {
+      color: #e64833;
+      border-left: 4px solid #e64833;
+      background-color: #343a40; /* Optional: active background */
+    }
+    
+    .navbar-icon {
+      font-size: 1.2rem; /* Increased icon size */
+      width: 1.5em; /* Ensure space for icon */
+      text-align: center;
+      flex-shrink: 0; /* Prevent icon from shrinking */
+    }
+    
+    .vertical-navbar.expanded .navbar-icon {
+      margin-right: 0.75rem;
+    }
+    
+    .nav-text {
+      margin-left: 0.75rem;
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .nav-text.hidden {
+      opacity: 0;
+      pointer-events: none; /* Prevent interaction when hidden */
+      display: none; /* Ensure it doesn't take space */
+    }
+    
+    .nav-text.visible {
+      opacity: 1;
+      display: inline;
+    }
+    
+    .tooltip-text {
+      visibility: hidden;
+      background-color: #e64833;
+      color: #fff;
+      text-align: left;
+      border-radius: 4px;
+      padding: 8px 12px;
+      position: absolute;
+      z-index: 1000;
+      left: calc(100% + 10px); /* Position to the right of the item */
+      top: 50%;
+      transform: translateY(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+      pointer-events: none;
+    }
+  
+    
+    .tooltip-text::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 100%; /* Arrow points left */
+      margin-top: -6px; /* Adjust for arrow size */
+      border-width: 6px;
+      border-style: solid;
+      border-color: transparent #e64833 transparent transparent;
+    }
+    
+    /* Show tooltip only when navbar is collapsed and item is hovered */
+    .vertical-navbar.collapsed .vertical-nav-item:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    
+    /* General utility for hidden elements */
+    .hidden {
+      display: none !important;
+    }
+    
+    /* Margin utilities if needed */
+    .me-2 { margin-right: 0.5rem !important; }
+    .me-3 { margin-right: 1rem !important; }  

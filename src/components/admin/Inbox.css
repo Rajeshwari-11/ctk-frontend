@@ -1,0 +1,162 @@
+.background {
+    background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+.inbox-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.inbox-container h1 {
+    text-align: center;
+    font-weight: bolder;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.inbox-status {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+}
+
+.inbox-error {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.inbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inbox-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid #e64833;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    color: #fff;
+    width:800px;
+}
+
+.inbox-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.inbox-item-header {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.inbox-item > p {
+    margin: 8px 0;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.inbox-item p strong {
+    color: #fff;
+    min-width: 80px;
+    display: inline-block;
+}
+
+.inbox-item-message {
+    margin-top: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.inbox-item-message p {
+    color: #000 !important;
+}
+
+
+.inbox-item-message p:first-child {
+    margin-top: 0;
+}
+
+.inbox-item-message p:first-child strong {
+    color: #000 !important;
+}
+
+.inbox-item-message p:last-child {
+    margin-bottom: 0;
+    white-space: pre-wrap;
+}
+
+.inbox-text-area {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 80px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.inbox-admin-reply-section {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inbox-send-reply-button {
+    padding: 8px 10px;
+    background-color: #e64833;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    align-self: flex-end;
+}
+
+.inbox-send-reply-button:hover {
+    background-color: #000;
+    border: 1px solid #e64833;
+}
+
+.inbox-previous-reply {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border: 1px solid #e64833;
+}
+
+.inbox-previous-reply strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inbox-previous-reply p {
+    color: #fff;
+    white-space: pre-wrap;
+}
+
+.inbox-resolved-status {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #e64833 !important;
+    margin-top: 10px;
+}

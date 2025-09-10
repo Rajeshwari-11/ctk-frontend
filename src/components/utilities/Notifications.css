@@ -1,0 +1,130 @@
+/* Color Variables */
+:root {
+    --background-color: #000;
+    --text-color: #e8e3d9;
+    --notification-background-color: #e64833;
+    --icon-color: var(--text-color);
+    --clickable-notification-hover-color: #a8352b; /* Slightly darker for hover feedback */
+  }
+  
+  /* Icon Container */
+  .notification-icon-container {
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  /* Icon */
+  .notification-icon {
+    font-size: 24px;
+    color: var(--icon-color);
+  }
+  
+  /* Fixed Notifications Container */
+  .notifications-fixed-container {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    max-width: 400px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+  }
+  
+  /* Title */
+  .notifications-title {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 0;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--notification-background-color);
+  }
+  
+  /* List Container (scrollable area) */
+  .notifications-list-container {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  /* List (ul) */
+  .notifications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Base style for list items (li) */
+  .notification-list-item {
+    background-color: var(--notification-background-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out; /* Smooth transition for hover */
+  }
+  
+  /* Style for clickable list items */
+  .clickable-notification-item {
+    cursor: pointer;
+  }
+  
+  .clickable-notification-item:hover {
+    background-color: var(--clickable-notification-hover-color);
+  }
+  
+  /* Message text within notification */
+  .notification-message {
+    margin: 0;
+  }
+  
+  /* Timestamp text */
+  .notification-timestamp {
+    font-size: 0.8em;
+    color: #ccc;
+    margin-top: 5px;
+    display: block; /* Ensures timestamp is on a new line */
+  }
+  
+  /* No Notifications message */
+  .no-notifications {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+  }
+  
+  /* Loading message */
+  .notifications-loading {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+  }
+  
+  /* Error message */
+  .notifications-error {
+    text-align: center;
+    padding: 20px;
+    color: red;
+  }
+  
+  /* Notification Badge */
+  .notification-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: red;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Keyframe animation for pulse effect */
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+  }
