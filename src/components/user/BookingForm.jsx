@@ -167,7 +167,7 @@ const BookingForm = () => {
   };
 
   if (!event && !showConfirmation) {
-  return <p className="text-center mt-5">Loading event details or no event found.</p>;
+  // return <p className="text-center mt-5">Loading event details or no event found.</p>;
 }
 const ticketPrice = Number(event?.eventTicketPrice || 1); // price per ticket, fallback to 1
 const tickets = Number(formData.numberOfTickets || 1);
