@@ -93,7 +93,7 @@ function Inbox() {
     };
 
     if (loading) {
-        return <div className="inbox-status">Loading contact messages...</div>;
+        // return <div className="inbox-status">Loading contact messages...</div>;
     }
 
     if (error) {
