@@ -55,7 +55,7 @@ const EventDetails = () => {
   }, [id]);
 
   if (!event) {
-    return <p>Loading event details...</p>;
+    // return <p>Loading event details...</p>;
   }
 
   const handleViewTicketsClick = () => {
