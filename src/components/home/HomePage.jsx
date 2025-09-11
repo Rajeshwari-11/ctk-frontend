@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
+import Footer from '../utilities/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utilities/AuthProvider';
 // import colab1 from "../../assets";
@@ -126,6 +127,7 @@ const HomePage = () => {
 
           <button type="submit" className="homepage-moreeventsBtn" onClick={handleMoreEvents}>More events...</button>
         </div>
+        <Footer />
       </div>
     </>
   );

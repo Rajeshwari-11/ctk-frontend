@@ -59,7 +59,7 @@ const App = () => {
                 <Route path="/inbox/:id" element={<Inbox />} />
               </Routes>
             </div>
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </Router>
       </NotificationProvider>
