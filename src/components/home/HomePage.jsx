@@ -167,10 +167,10 @@ const HomePage = () => {
             <div className="homepage-collabs">
               <h2 className="text-center">Collaborations</h2>
               <div className="homepage-collabs-logos">
-                <div className="imageDiv"><img src={"src/assets/colab4.png"} alt="Logo 1" /></div>
-                <div className="imageDiv"><img src={"src/assets/colab1.png"} alt="Logo 2" /></div>
-                <div className="imageDiv"><img src={"src/assets/colab2.png"} alt="Logo 3" /></div>
-                <div className="imageDiv"><img src={'src/assets/colab3.png'} alt="Logo 4" /></div>
+                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab1.png"} alt="Logo 1" /></div>
+                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab2.png"} alt="Logo 2" /></div>
+                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab3.png"} alt="Logo 3" /></div>
+                <div className="imageDiv"><img src={'https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab4.png'} alt="Logo 4" /></div>
               </div>
             </div>
           </div>
