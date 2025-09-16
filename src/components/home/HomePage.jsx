@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import './HomePage.css';
-import Footer from '../utilities/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utilities/AuthProvider';
+import Footer from '../utilities/Footer';
 // import colab1 from "../../assets";
 
 const HomePage = () => {
-  const{isAdmin,isAuthenticated} =useAuth();
+  const { isAdmin, isAuthenticated } = useAuth();
   const navigate = useNavigate();
   const [events, setEvents] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [showUsers, setShowUsers] = useState(false);
+
+  // pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const eventsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://13.48.125.242:8000/api/getevents', {
+    fetch('http://3.7.246.87:8000/api/getevents', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -28,9 +34,27 @@ const HomePage = () => {
       })
   }, []);
 
+  // const handleFetchUsers = () => {
+  //   fetch('http://3.7.246.87:8000/api/get-users', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Authorization': `Bearer ${localStorage.getItem('jwt_token')}`,
+  //     },
+  //   })
+  //     .then((res) => {
+  //       if (!res.ok) throw new Error('Failed to fetch users');
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setUsers(data.users || []);
+  //       setShowUsers(true); // show after fetching
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
   const handleEventClick = (id) => {
-    console.log(id);
+    // console.log(id);
     if (isAuthenticated) {
       navigate(`/event/${id}`);
     } else {
@@ -40,7 +64,21 @@ const HomePage = () => {
 
   const handleMoreEvents = () => {
     navigate(`/events`);
-  }
+  };
+
+  // pagination logic
+  const indexOfLastEvent = currentPage * eventsPerPage;
+  const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+  const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
+  const totalPages = Math.ceil(events.length / eventsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
 
   return (
     <>
@@ -79,21 +117,60 @@ const HomePage = () => {
                   Create New Event
                 </a>
               </div>
+              
             </div>
           )}
+
+          {showUsers && (
+            <div className="homepage-users-container">
+              <button
+                className="users-close-button"
+                onClick={() => setShowUsers(false)}
+              >
+                ✖
+              </button>
+              <h2>Users List</h2>
+              {users.length === 0 ? (
+                <p>No users found.</p>
+              ) : (
+                <table className="users-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user) => (
+                      <tr key={user._id}>
+                        <td>{user.userName}</td>
+                        <td>{user.userEmail}</td>
+                        <td>{user.userPhonenumber}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          )}
+
           <div className="homepage-collaborations">
             <div className="homepage-vision">
               <h2>Our Vision</h2>
-              <p>To be the leading platform for discovering and experiencing exceptional events, fostering connections and enriching lives through memorable experiences.</p>
+              <p>
+                To be the leading platform for discovering and experiencing exceptional events,
+                fostering connections and enriching lives through memorable experiences.
+              </p>
             </div>
 
             <div className="homepage-collabs">
               <h2 className="text-center">Collaborations</h2>
               <div className="homepage-collabs-logos">
-                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab4.png"} alt="Logo 1" /></div>
-                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab1.png"} alt="Logo 2" /></div>
-                <div className="imageDiv"><img src={"https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab2.png"} alt="Logo 3" /></div>
-                <div className="imageDiv"><img src={'https://ctk-lm.s3.us-east-1.amazonaws.com/assets/colab3.png'} alt="Logo 4" /></div>
+                <div className="imageDiv"><img src={"src/assets/colab4.png"} alt="Logo 1" /></div>
+                <div className="imageDiv"><img src={"src/assets/colab1.png"} alt="Logo 2" /></div>
+                <div className="imageDiv"><img src={"src/assets/colab2.png"} alt="Logo 3" /></div>
+                <div className="imageDiv"><img src={'src/assets/colab3.png'} alt="Logo 4" /></div>
               </div>
             </div>
           </div>
@@ -103,29 +180,59 @@ const HomePage = () => {
             {events.length === 0 ? (
               <p>No events available.</p>
             ) : (
-              <div className="homepage-eventgrid">
-                {events.map((event) => (
-                  <div key={event._id} className="homepage-eventcard" onClick={() => handleEventClick(event._id)}>
-                    <div className="homepage-eventcard-container">
-                      <img
-                        src={event.eventImage}
-                        alt={event.eventName}
-                        className="homepage-eventcard-img" />
+              <>
+                <div className="homepage-eventgrid">
+                  {currentEvents.map((event) => (
+                    <div
+                      key={event._id}
+                      className="homepage-eventcard"
+                      onClick={() => handleEventClick(event._id)}
+                    >
+                      <div className="homepage-eventcard-container">
+                        <img
+                          src={event.eventImage}
+                          alt={event.eventName}
+                          className="homepage-eventcard-img"
+                        />
+                      </div>
+                      <div className="homepage-eventcard-detail">
+                        <p><strong>{event.eventName}</strong></p>
+                        <p>Date: {new Date(event.eventDate).toLocaleDateString()}</p>
+                        <p>Time: {event.eventTime}</p>
+                        <p>Location: {event.eventLocation}</p>
+                        <p>Ticket Price: ₹{event.eventTicketPrice}</p>
+                      </div>
                     </div>
-                    <div className="homepage-eventcard-detail">
-                      <p><strong>{event.eventName}</strong></p>
-                      <p>Date: {new Date(event.eventDate).toLocaleDateString()}</p>
-                      <p>Time: {event.eventTime}</p>
-                      <p>Location: {event.eventLocation}</p>
-                      <p>Ticket Price: ₹{event.eventTicketPrice}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+
+                {/* Pagination controls */}
+                <div className="homepage-pagination">
+                  <button
+                    onClick={handlePrevPage}
+                    disabled={currentPage === 1}
+                    className="pagination-btn"
+                  >
+                    ⬅ Prev
+                  </button>
+                  <span className="pagination-info">
+                    Page {currentPage} of {totalPages}
+                  </span>
+                  <button
+                    onClick={handleNextPage}
+                    disabled={currentPage === totalPages}
+                    className="pagination-btn"
+                  >
+                    Next ➡
+                  </button>
+                </div>
+              </>
             )}
           </div>
 
-          <button type="submit" className="homepage-moreeventsBtn" onClick={handleMoreEvents}>More events...</button>
+          <button type="submit" className="homepage-moreeventsBtn" onClick={handleMoreEvents}>
+            More events...
+          </button>
         </div>
         <Footer />
       </div>
@@ -134,5 +241,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-

@@ -69,8 +69,8 @@ const SignUp = () => {
             return;
         }
         
-    fetch('http://13.48.125.242:8000/api/signup', {
-      method: ['POST'],
+    fetch('http://3.7.246.87:8000/api/signup', {
+      method: "POST",
       headers: {
         'Content-Type': 'application/json',
       },

@@ -24,7 +24,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await fetch("http://13.48.125.242:8000/api/reset-password", {
+      const response = await fetch("http://3.7.246.87:8000/api/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

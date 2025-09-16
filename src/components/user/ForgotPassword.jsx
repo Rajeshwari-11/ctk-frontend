@@ -16,7 +16,7 @@ const ForgotPassword = () => {
     event.preventDefault();
     setMessage("");
     try {
-      const response = await fetch("http://13.48.125.242:8000/api/forget-password", {
+      const response = await fetch("http://3.7.246.87:8000/api/forget-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -60,7 +60,7 @@ const ForgotPassword = () => {
     setError("");
 
     try {
-      const response = await fetch("http://13.48.125.242:8000/api/verifyOtp", {
+      const response = await fetch("http://3.7.246.87:8000/api/verifyOtp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

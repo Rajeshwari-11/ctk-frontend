@@ -4,7 +4,7 @@ import { useAuth } from '../utilities/AuthProvider';
 import './CreateEvent.css';
 
 const CreateEvent = () => {
-  const { isAdmin, isAuthenticated } = useAuth();
+  const { isAdmin } = useAuth();
   const navigate = useNavigate();
 
   const [showForm, setShowForm] = useState(true);
@@ -13,7 +13,6 @@ const CreateEvent = () => {
   const [uploadStatus, setUploadStatus] = useState('');
   const [submittedEvent, setSubmittedEvent] = useState({});
 
-  // ✅ Include all fields in state
   const [eventData, setEventData] = useState({
     eventName: "",
     eventDate: "",
@@ -33,47 +32,43 @@ const CreateEvent = () => {
     setEventData({ ...eventData, [e.target.name]: e.target.value });
   };
 
-  // **Handle Image Selection**
   const handleFileChange = (e) => {
     setEventImage(e.target.files[0]);
   };
 
-  const handleFileSubmit = (e) => {
+  const handleFileSubmit = async (e) => {
     e.preventDefault();
-    const uploadEventImage = async (imageFile) => {
-      try {
-        setUploadStatus('Uploading...');
-        const formData = new FormData();
-        formData.append("eventImage", imageFile);
+    if (!eventImage) return;
 
-        const response = await fetch('http://13.48.125.242:8000/api/upload', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem("jwt_token")}`,
-          },
-          body: formData,
-        });
+    try {
+      setUploadStatus('Uploading...');
+      const formData = new FormData();
+      formData.append("eventImage", eventImage);
 
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || 'Image upload failed');
-        }
+      const response = await fetch('http://3.7.246.87:8000/api/upload', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem("jwt_token")}`,
+        },
+        body: formData,
+      });
 
-        const data = await response.json();
-        setEventData((prevData) => ({ ...prevData, eventImage: data.imageUrl }));
-        setUploadStatus('Uploaded!');
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        setUploadStatus('Upload failed!');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Image upload failed');
       }
-    };
 
-    if (eventImage) uploadEventImage(eventImage);
+      const data = await response.json();
+      setEventData((prevData) => ({ ...prevData, eventImage: data.imageUrl }));
+      setUploadStatus('Uploaded!');
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      setUploadStatus('Upload failed!');
+    }
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Event Data Before Sending:", eventData);
 
     if (!eventData.eventImage) {
       alert("Please upload an image first.");
@@ -81,7 +76,7 @@ const CreateEvent = () => {
     }
 
     try {
-      const response = await fetch("http://13.48.125.242:8000/api/create", {
+      const response = await fetch("http://3.7.246.87:8000/api/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,12 +86,11 @@ const CreateEvent = () => {
       });
 
       const data = await response.json();
-      console.log("API Response:", data);
 
       if (response.ok) {
         setShowForm(false);
         setIsSubmitted(true);
-        setSubmittedEvent(data.event || data || eventData); // ✅ flexible handling
+        setSubmittedEvent(data.event || data || eventData);
       } else {
         alert("Failed to create event: " + (data.message || response.statusText));
       }
@@ -106,7 +100,6 @@ const CreateEvent = () => {
     }
   };
 
-  // ✅ Redirect after submission
   useEffect(() => {
     if (isSubmitted) {
       const timer = setTimeout(() => {
@@ -197,9 +190,6 @@ const CreateEvent = () => {
                   required
                 />
               </label>
-
-
-              {/* hello */}
 
               <label className="create-event-formlabel">
                 Category:
@@ -316,7 +306,7 @@ const CreateEvent = () => {
                 </div>
               )}
 
-              <p>Redirecting to home page...</p>
+              <p className="redirect-msg">Redirecting to home page...</p>
             </div>
           </div>
         )}

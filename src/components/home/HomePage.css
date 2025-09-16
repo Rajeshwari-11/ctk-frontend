@@ -1,5 +1,5 @@
 .homepage-wrapper {
-  background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+  background-image: url('../../assets/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,6 +113,107 @@
 .homepage-admin-button:hover {
   background-color: #cc3c2b;
 }
+
+
+.homepage-users-container {
+  position: relative; /* added */
+  margin: 40px auto;
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #E64833;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  backdrop-filter: blur(5px);
+}
+
+/* Table Heading */
+.homepage-users-container h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* Users Table */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Table Header */
+.users-table thead tr {
+  background-color: rgba(230, 72, 51, 0.8);
+}
+
+.users-table thead th {
+  padding: 12px;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px solid #fff;
+}
+
+/* Table Rows */
+.users-table tbody tr {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.users-table tbody tr:hover {
+  background-color: rgba(230, 72, 51, 0.3);
+}
+
+/* Table Cells */
+.users-table td {
+  padding: 12px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  word-break: break-word;
+}
+
+/* Scroll if too many users */
+.users-table tbody {
+  display: block;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.users-table thead, .users-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Button hover effect */
+.homepage-admin-button {
+  margin-top: 20px;
+}
+
+/* Close button for users table */
+.users-close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: rgba(230, 72, 51, 0.8);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.users-close-button:hover {
+  background-color: #cc3c2b;
+}
+
 
 .homepage-collaborations {
   display: flex;
@@ -286,6 +387,42 @@
               0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
+
+/* Pagination */
+.homepage-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination-btn {
+  background: #e64833;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pagination-btn:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #c53a2a;
+}
+
+.pagination-info {
+  font-weight: bold;
+  color: #fff;
+}
+
+
+
 /* Animations */
 @keyframes fadeInDown {
   0% { opacity: 0; transform: translateY(-20px); }
@@ -322,4 +459,60 @@
   .homepage-eventgrid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .homepage-eventcard { max-width: 220px; }
   .homepage-eventcard-container { height: 220px; }
+}
+
+/* Mobile: stack vision and collabs vertically */
+@media (max-width: 768px) {
+  .homepage-collaborations {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px; /* reduce margin so it looks balanced */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .homepage-vision,
+  .homepage-collabs {
+    width: 90%; /* take most of the width */
+    margin: 10px 0; /* spacing between them */
+    text-align: center; /* center text for smaller screens */
+  }
+
+  .homepage-collabs h2 {
+    text-align: center;
+  }
+
+  .homepage-collabs-logos {
+    flex-wrap: wrap; /* logos wrap neatly */
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .homepage-collabs-logos img {
+    height: 40px; /* shrink logos a bit */
+    margin: 5px;
+  }
+}
+
+/* Extra small devices (phones < 426px) */
+@media (max-width: 426px) {
+  .homepage-vision h2,
+  .homepage-collabs h2 {
+    font-size: 24px;
+  }
+
+  .homepage-vision p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-admin-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 15px;
+  }
 }

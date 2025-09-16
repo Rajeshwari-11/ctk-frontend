@@ -17,6 +17,7 @@ const BookingForm = () => {
     eventName: '',
     userName: '',
     userPhonenumber: '',
+    userEmail: '',
     numberOfTickets: 1,
     eventDate: '',
   });
@@ -32,7 +33,7 @@ const BookingForm = () => {
 
   // Fetch event details
   useEffect(() => {
-    fetch(`http://13.48.125.242:8000/api/getevent/${id}`, {
+    fetch(`http://3.7.246.87:8000/api/getevent/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -80,6 +81,12 @@ const BookingForm = () => {
       newErrors.numberOfTickets = 'Number of tickets must be between 1 and 10.';
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.userEmail)) {
+      newErrors.userEmail = 'Please enter a valid email address.';
+    }
+
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -95,7 +102,7 @@ const BookingForm = () => {
     const tickets = Number(formData.numberOfTickets || 1);
     const totalAmount = ticketPrice * tickets; // rupees
 
-    const orderRes = await fetch('http://13.48.125.242:8000/api/create-order', {
+    const orderRes = await fetch('http://3.7.246.87:8000/api/create-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amountInRupees: totalAmount })
@@ -119,7 +126,7 @@ const BookingForm = () => {
         },
         handler: async (response) => {
           // 3) Verify payment
-          const verifyRes = await fetch('http://13.48.125.242:8000/api/verify-payment', {
+          const verifyRes = await fetch('http://3.7.246.87:8000/api/verify-payment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(response),
@@ -128,7 +135,7 @@ const BookingForm = () => {
 
           if (verify.ok) {
             // 4) Save booking
-            await fetch(`http://13.48.125.242:8000/api/bookevents/${id}`, {
+            await fetch(`http://3.7.246.87:8000/api/bookevents/${id}`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -136,6 +143,21 @@ const BookingForm = () => {
               },
               body: JSON.stringify(formData),
             });
+
+            // 5) Send ticket email 🎟️
+                await fetch('http://3.7.246.87:8000/api/send-booking-email', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    userName: formData.userName,
+                    userPhone: formData.userPhonenumber,
+                    userEmail: formData.userEmail,   // 🔑 add email field in formData
+                    eventName: event.eventName,
+                    eventDate: event.eventDate,
+                    tickets,
+                    totalAmount,
+                  }),
+                });
 
             refreshNotifications();
             setConfirmationMessage(
@@ -167,7 +189,7 @@ const BookingForm = () => {
   };
 
   if (!event && !showConfirmation) {
-  return;
+  return ;
 }
 const ticketPrice = Number(event?.eventTicketPrice || 1); // price per ticket, fallback to 1
 const tickets = Number(formData.numberOfTickets || 1);
@@ -184,6 +206,7 @@ const totalAmount = ticketPrice * tickets; // total
                 <label htmlFor="eventName">Event Name</label>
                 <input type="text" id="eventName" name="eventName" value={formData.eventName} readOnly />
               </div>
+              
               <div>
                 <label htmlFor="userName">Name</label>
                 <input
@@ -196,6 +219,21 @@ const totalAmount = ticketPrice * tickets; // total
                   value={formData.userName}
                 />
                 {errors.userName && <div className="text-danger">{errors.userName}</div>}
+              </div>
+
+
+             <div>
+                <label htmlFor="userEmail">Email</label>
+                <input
+                  type="email"
+                  id="userEmail"
+                  name="userEmail"
+                  placeholder="Enter your email..."
+                  required
+                  onChange={handleChange}
+                  value={formData.userEmail || ''}
+                />
+                {errors.userEmail && <div className="text-danger">{errors.userEmail}</div>}
               </div>
               <div>
                 <label htmlFor="phoneNumber">Phone Number</label>

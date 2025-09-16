@@ -14,7 +14,7 @@ function Inbox() {
     useEffect(() => {
         const fetchContacts = async () => {
             try {
-                const response = await fetch('http://13.48.125.242:8000/api/admin-get', {
+                const response = await fetch('http://3.7.246.87:8000/api/admin-get', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ function Inbox() {
         }
 
         try {
-            const response = await fetch('http://13.48.125.242:8000/api/admin-post', {
+            const response = await fetch('http://3.7.246.87:8000/api/admin-post', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ function Inbox() {
                                         <p className="inbox-resolved-status">
                                             {contact.isResolved
                                                 ? 'This enquiry has been resolved.'
-                                                : 'User not found, please mail them directly.'}
+                                                : 'This enquiry has been resolved.'}
                                         </p>
                                     </div>
                                 ) : (

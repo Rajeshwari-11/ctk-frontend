@@ -35,7 +35,7 @@ const ViewFeedback = () => {
     useEffect(() => {
         const fetchFeedbacks = async () => {
             try {
-                const response = await fetch(`http://13.48.125.242:8000/api/viewfeedback/${id}`, {
+                const response = await fetch(`http://3.7.246.87:8000/api/viewfeedback/${id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ const ViewFeedback = () => {
         return (
             <div className="view-feedbacks-container error-message">
                 <p>{error}</p>
-                <p>Please ensure your backend is running and accessible at `http://13.48.125.242:8000/api/feedbacks` and returns an array of feedback objects.</p>
+                <p>Please ensure your backend is running and accessible at `http://3.7.246.87:8000/api/feedbacks` and returns an array of feedback objects.</p>
             </div>
         );
     }
@@ -201,4 +201,4 @@ const ViewFeedback = () => {
     );
 }
 
-export default ViewFeedback;
+export default ViewFeed;

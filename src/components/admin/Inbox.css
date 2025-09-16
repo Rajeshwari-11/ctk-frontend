@@ -1,30 +1,38 @@
 .background {
-    background-image: url('https://ctk-lm.s3.us-east-1.amazonaws.com/assets/background.jpg');
+    background-image: url('../../assets/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
     overflow-x: hidden;
+    min-height: 100vh;
+    width: 100vw;
 }
+
 .inbox-container {
-    padding: 20px;
-    max-width: 900px;
-    margin: 20px auto;
+    padding: 10px;
+    margin-left: 80px;   /* Push content away from sidebar */
+    margin-right: 20px;  /* Add a little space on the right too */
     font-family: Arial, sans-serif;
+     width: calc(100% - 100px); /*Adjust width to account for sidebar + margin */
+    /* width:31.2vw; */
+    box-sizing: border-box;
+    width: 100vw;
 }
 
 .inbox-container h1 {
     text-align: center;
     font-weight: bolder;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
 }
 
 .inbox-status {
     text-align: center;
-    font-size: 1.1em;
-    color: #555;
+    font-size: 1.2em;
+    color: #ccc;
     margin-top: 20px;
 }
 
@@ -36,98 +44,88 @@
 .inbox-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .inbox-item {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid #e64833;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     color: #fff;
-    width:800px;
-}
 
+    width: 100%;          /* full width inside container */
+    margin-bottom: 20px;  /* spacing between enquiries */
+}
 .inbox-item:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .inbox-item-header {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #fff;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e64833;
+    padding-bottom: 8px;
 }
 
 .inbox-item > p {
-    margin: 8px 0;
+    margin: 10px 0;
     line-height: 1.6;
     color: #fff;
 }
 
 .inbox-item p strong {
-    color: #fff;
+    color: #e64833;
     min-width: 80px;
     display: inline-block;
 }
 
 .inbox-item-message {
-    margin-top: 15px;
+    margin-top: 18px;
     background-color: #fff;
-    padding: 10px;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 6px;
     border: 1px solid #eee;
 }
 
 .inbox-item-message p {
     color: #000 !important;
-}
-
-
-.inbox-item-message p:first-child {
-    margin-top: 0;
-}
-
-.inbox-item-message p:first-child strong {
-    color: #000 !important;
-}
-
-.inbox-item-message p:last-child {
-    margin-bottom: 0;
+    margin: 5px 0;
     white-space: pre-wrap;
 }
 
 .inbox-text-area {
     width: 100%;
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 18px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    min-height: 80px;
-    font-size: 0.95rem;
+    border-radius: 6px;
+    min-height: 100px;
+    font-size: 1rem;
     box-sizing: border-box;
 }
 
 .inbox-admin-reply-section {
-    margin-top: 15px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .inbox-send-reply-button {
-    padding: 8px 10px;
+    padding: 10px 14px;
     background-color: #e64833;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 1rem;
     align-self: flex-end;
+    transition: background 0.3s ease;
 }
 
 .inbox-send-reply-button:hover {
@@ -136,17 +134,17 @@
 }
 
 .inbox-previous-reply {
-    margin-top: 15px;
-    padding: 10px;
+    margin-top: 18px;
+    padding: 12px;
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid #e64833;
 }
 
 .inbox-previous-reply strong {
     color: #fff;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .inbox-previous-reply p {
@@ -155,8 +153,21 @@
 }
 
 .inbox-resolved-status {
-    font-size: 0.9em;
+    font-size: 0.95em;
     font-style: italic;
     color: #e64833 !important;
-    margin-top: 10px;
+    margin-top: 12px;
+}
+
+/* 📱 Responsive tweaks */
+@media (max-width: 768px) {
+    .inbox-container {
+        padding: 20px;
+    }
+    .inbox-container h1 {
+        font-size: 1.6rem;
+    }
+    .inbox-item {
+        padding: 15px;
+    }
 }
