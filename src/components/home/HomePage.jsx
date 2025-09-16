@@ -213,7 +213,7 @@ const HomePage = () => {
                     disabled={currentPage === 1}
                     className="pagination-btn"
                   >
-                    ⬅ Prev
+                    Prev
                   </button>
                   <span className="pagination-info">
                     Page {currentPage} of {totalPages}
@@ -223,7 +223,7 @@ const HomePage = () => {
                     disabled={currentPage === totalPages}
                     className="pagination-btn"
                   >
-                    Next ➡
+                    Next 
                   </button>
                 </div>
               </>
