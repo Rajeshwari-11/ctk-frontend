@@ -35,11 +35,11 @@ const ViewEventTickets = () => {
                     throw new Error(errorData.message || `Failed to fetch event details. Status: ${eventResponse.status}`);
                 }
                 const data = await eventResponse.json();
-                console.log(data);
+                // console.log(data);
                 setEventDetails(data.event);
-                console.log("Events data",data.event);
+                // console.log("Events data",data.event);
                 setBookings(data.bookings);
-                console.log("Bookings data",data.bookings);
+                // console.log("Bookings data",data.bookings);
 
             } catch (err) {
                 console.error("Error fetching data for ViewEventTickets:", err);

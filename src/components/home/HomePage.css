@@ -8,7 +8,7 @@
   position: relative;
   overflow-x: hidden;
 }
-
+ 
 .homepage-content-scroller {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -16,7 +16,7 @@
   color: #fff;
   min-height: 100vh;
 }
-
+ 
 .homepage-header {
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
   padding-bottom: 20px;
   margin-bottom: 200px;
 }
-
+ 
 .homepage-heading {
   text-align: center;
   font-weight: bold;
@@ -39,7 +39,7 @@
   transform: translateY(-20px);
   animation: fadeInUp 1s ease-out forwards;
 }
-
+ 
 .homepage-subheading {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   font-size: 30px;
@@ -52,7 +52,7 @@
   animation: fadeInDown 1s ease-out forwards;
   animation-delay: 0.5s;
 }
-
+ 
 .homepage-admin-container {
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
   justify-content: center;
   padding: 16px;
 }
-
+ 
 .homepage-admin-card {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
@@ -73,7 +73,7 @@
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
+ 
 .homepage-admin-heading {
   font-size: 48px;
   font-weight: 800;
@@ -81,20 +81,20 @@
   margin-bottom: 16px;
   line-height: 1.25;
 }
-
+ 
 .homepage-admin-subheading {
   font-size: 20px;
   color: #e5e7eb;
   margin-bottom: 24px;
   font-weight: 300;
 }
-
+ 
 .homepage-admin-text {
   font-size: 18px;
   color: #e5e7eb;
   margin-bottom: 32px;
 }
-
+ 
 .homepage-admin-button {
   text-decoration: none;
   background-color: #E64833;
@@ -106,17 +106,16 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
               0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-
+ 
 .homepage-admin-button:hover {
   background-color: #cc3c2b;
 }
-
-
+ 
 .homepage-users-container {
-  position: relative; /* added */
+  position: relative;
   margin: 40px auto;
   max-width: 900px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -128,7 +127,7 @@
   color: #fff;
   backdrop-filter: blur(5px);
 }
-
+ 
 /* Table Heading */
 .homepage-users-container h2 {
   margin-bottom: 20px;
@@ -136,7 +135,7 @@
   font-weight: 700;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
-
+ 
 /* Users Table */
 .users-table {
   width: 100%;
@@ -145,29 +144,29 @@
   font-size: 18px;
   text-align: left;
 }
-
+ 
 /* Table Header */
 .users-table thead tr {
   background-color: rgba(230, 72, 51, 0.8);
 }
-
+ 
 .users-table thead th {
   padding: 12px;
   color: #fff;
   font-weight: 600;
   border-bottom: 2px solid #fff;
 }
-
+ 
 /* Table Rows */
 .users-table tbody tr {
   background-color: rgba(255, 255, 255, 0.1);
   transition: background-color 0.3s;
 }
-
+ 
 .users-table tbody tr:hover {
   background-color: rgba(230, 72, 51, 0.3);
 }
-
+ 
 /* Table Cells */
 .users-table td {
   padding: 12px;
@@ -175,25 +174,25 @@
   border-bottom: 1px solid rgba(255,255,255,0.2);
   word-break: break-word;
 }
-
+ 
 /* Scroll if too many users */
 .users-table tbody {
   display: block;
   max-height: 400px;
   overflow-y: auto;
 }
-
+ 
 .users-table thead, .users-table tbody tr {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
-
+ 
 /* Button hover effect */
 .homepage-admin-button {
   margin-top: 20px;
 }
-
+ 
 /* Close button for users table */
 .users-close-button {
   position: absolute;
@@ -209,12 +208,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 .users-close-button:hover {
   background-color: #cc3c2b;
 }
-
-
+ 
 .homepage-collaborations {
   display: flex;
   flex-direction: row;
@@ -225,7 +223,7 @@
   margin-right: 10px;
   padding: 20px;
 }
-
+ 
 .homepage-vision {
   width: 48%;
   text-align: left;
@@ -242,16 +240,16 @@
   animation-delay: 0.5s;
   margin-left: 30px;
 }
-
+ 
 .homepage-vision h2 {
   text-align: center;
   margin-bottom: 15px;
 }
-
+ 
 .homepage-vision p {
   color: #fff;
 }
-
+ 
 .homepage-collabs {
   width: 50%;
   text-align: right;
@@ -263,37 +261,37 @@
   animation: fadeInRight 1s ease-out forwards;
   animation-delay: 0.5s;
 }
-
+ 
 .homepage-collabs h2 {
   margin-bottom: 15px;
 }
-
+ 
 .homepage-collabs-logos {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-right: 20px;
 }
-
+ 
 .homepage-collabs-logos img {
   height: 50px;
   margin-left: 10px;
   border-radius: 8px;
 }
-
+ 
 .homepage-collabs-logos .imageDiv {
   display: flex;
   box-shadow: 2px 2px 2px white;
   border-radius: 8px;
   margin-left: 10px;
 }
-
+ 
 /* EVENTS */
 .homepage-events {
   padding: 2rem 3rem;
   padding-left: 2rem;
 }
-
+ 
 .homepage-eventheading {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   font-size: 70px;
@@ -303,19 +301,19 @@
   text-align: center;
   font-weight: bold;
 }
-
+ 
 .homepage-eventheading p {
   color: #fff;
   text-align: center;
 }
-
+ 
 .homepage-eventgrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   justify-items: center;
 }
-
+ 
 .homepage-eventcard {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
@@ -325,46 +323,46 @@
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  max-width: 280px; /* keeps cards uniform width */
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   border: #E64833 2px solid;
 }
-
+ 
 .homepage-eventcard:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   background-color: rgba(230, 72, 51);
   backdrop-filter: blur(4px);
 }
-
+ 
 .homepage-eventcard-container {
   width: 100%;
-  height: 250px; /* fixed equal height for all images */
+  height: 250px;
   overflow: hidden;
   position: relative;
 }
-
+ 
 .homepage-eventcard-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures neat crop */
+  object-fit: cover;
   display: block;
 }
-
+ 
 .homepage-eventcard-detail {
   padding: 1rem;
   color: #fff;
-  flex: 1; /* ensures text section is consistent */
+  flex: 1;
 }
-
+ 
 .homepage-eventcard-detail p {
   margin: 0.5rem 0;
   color: #fff;
   text-align: left;
   text-wrap: wrap;
 }
-
+ 
 .homepage-moreeventsBtn {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
@@ -378,16 +376,15 @@
   display: block;
   color: #fff;
 }
-
+ 
 .homepage-moreeventsBtn:hover {
   transform: scale(1.05);
   background-color: rgba(230, 72, 51);
   border-color: #E64833;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
               0 6px 20px rgba(0, 0, 0, 0.19);
 }
-
-
+ 
 /* Pagination */
 .homepage-pagination {
   margin-top: 20px;
@@ -396,7 +393,7 @@
   align-items: center;
   gap: 12px;
 }
-
+ 
 .pagination-btn {
   background: #e64833;
   color: #fff;
@@ -406,113 +403,141 @@
   cursor: pointer;
   transition: background 0.3s ease;
 }
-
+ 
 .pagination-btn:disabled {
   background: #888;
   cursor: not-allowed;
 }
-
+ 
 .pagination-btn:hover:not(:disabled) {
   background: #c53a2a;
 }
-
+ 
 .pagination-info {
   font-weight: bold;
   color: #fff;
 }
-
-
-
+ 
 /* Animations */
 @keyframes fadeInDown {
   0% { opacity: 0; transform: translateY(-20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-
+ 
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
-
+ 
 @keyframes fadeInLeft {
   0% { opacity: 0; transform: translateX(-20px); }
   100% { opacity: 1; transform: translateX(0); }
 }
-
+ 
 @keyframes fadeInRight {
   0% { opacity: 0; transform: translateX(20px); }
   100% { opacity: 1; transform: translateX(0); }
 }
-
-/* MOBILE */
-@media (max-width: 426px) {
-  .homepage-heading { font-size: 40px; margin-top: 20px; }
-  .homepage-subheading { font-size: 20px; }
-  .homepage-eventgrid { grid-template-columns: 1fr; gap: 20px; }
-  .homepage-eventcard { max-width: 320px; }
-  .homepage-eventcard-container { height: 200px; }
-}
-
-/* TABLET */
-@media (max-width: 768px) and (min-width: 426px) {
-  .homepage-heading { font-size: 50px; }
-  .homepage-eventgrid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-  .homepage-eventcard { max-width: 220px; }
-  .homepage-eventcard-container { height: 220px; }
-}
-
-/* Mobile: stack vision and collabs vertically */
-@media (max-width: 768px) {
+ 
+/* ===================== */
+/* 📱 Responsive Queries */
+/* ===================== */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .homepage-heading {
+    font-size: 50px;
+  }
+  .homepage-subheading {
+    font-size: 22px;
+  }
+  .homepage-admin-card {
+    padding: 32px;
+  }
+  .homepage-admin-heading {
+    font-size: 36px;
+  }
+  .homepage-eventgrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .homepage-collaborations {
     flex-direction: column;
     align-items: center;
-    margin-top: 100px; /* reduce margin so it looks balanced */
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 120px;
   }
-
-  .homepage-vision,
-  .homepage-collabs {
-    width: 90%; /* take most of the width */
-    margin: 10px 0; /* spacing between them */
-    text-align: center; /* center text for smaller screens */
-  }
-
-  .homepage-collabs h2 {
+  .homepage-vision, .homepage-collabs {
+    width: 90%;
+    margin: 15px 0;
     text-align: center;
   }
-
   .homepage-collabs-logos {
-    flex-wrap: wrap; /* logos wrap neatly */
-    gap: 10px;
-    justify-content: center;
+    flex-wrap: wrap;
   }
-
   .homepage-collabs-logos img {
-    height: 40px; /* shrink logos a bit */
-    margin: 5px;
+    margin: 8px;
   }
 }
-
-/* Extra small devices (phones < 426px) */
-@media (max-width: 426px) {
-  .homepage-vision h2,
-  .homepage-collabs h2 {
-    font-size: 24px;
+ 
+/* Mobiles */
+@media (max-width: 600px) {
+  .homepage-content-scroller {
+    padding: 20px 15px;
   }
-
-  .homepage-vision p {
+  .homepage-heading {
+    font-size: 36px;
+  }
+  .homepage-subheading {
+    font-size: 18px;
+  }
+  .homepage-admin-card {
+    padding: 20px;
+  }
+  .homepage-admin-heading {
+    font-size: 28px;
+  }
+  .homepage-admin-subheading,
+  .homepage-admin-text {
+    font-size: 16px;
+  }
+  .homepage-admin-button {
+    font-size: 16px;
+    padding: 10px 24px;
+  }
+  .users-table {
     font-size: 14px;
   }
-}
-
-@media (max-width: 768px) {
-  .homepage-admin-button {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    border-radius: 10px;
-    margin-top: 15px;
+  .homepage-eventheading {
+    font-size: 40px;
+  }
+  .homepage-eventgrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .homepage-collabs-logos img {
+    height: 40px;
   }
 }
+ 
+/* Small Mobiles */
+@media (max-width: 400px) {
+  .homepage-heading {
+    font-size: 28px;
+  }
+  .homepage-subheading {
+    font-size: 16px;
+  }
+  .homepage-admin-heading {
+    font-size: 22px;
+  }
+  .homepage-admin-subheading,
+  .homepage-admin-text {
+    font-size: 14px;
+  }
+  .homepage-eventheading {
+    font-size: 28px;
+  }
+  .homepage-collabs-logos img {
+    height: 32px;
+  }
+}
+ 

@@ -9,7 +9,7 @@
     position: relative;
     overflow-x: hidden;
 }
-
+ 
 .contactus-main-container {
     font-family: sans-serif;
     margin-top: 20px;
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
 }
-
+ 
 .contactus-form-container {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
@@ -30,13 +30,13 @@
     width: 100%;
     max-width: 500px;
 }
-
+ 
 .contactus-form-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #fff;
 }
-
+ 
 .contactus-description {
     text-align: center;
     margin-bottom: 20px;
@@ -44,22 +44,22 @@
     padding-bottom: 20px;
     border-bottom: #fff solid 1px;
 }
-
+ 
 .contactus-form {
     display: flex;
     flex-direction: column;
 }
-
+ 
 .contactus-form div {
     margin-bottom: 15px;
 }
-
+ 
 .contactus-form label {
     font-weight: bold;
     color: #fff;
     margin-bottom: 5px;
 }
-
+ 
 .contactus-form input {
     padding: 10px;
     border-radius: 5px;
@@ -69,7 +69,7 @@
     background-color: #ffffff;
     opacity: 0.8;
 }
-
+ 
 .contactus-form textarea {
     padding: 10px;
     border-radius: 5px;
@@ -80,8 +80,8 @@
     background-color: #ffffff;
     opacity: 0.8;
 }
-
-
+ 
+ 
 .contact-formbutton {
     width: 100%;
     margin-top: 10px;
@@ -91,29 +91,29 @@
     border-radius: 5px;
     border: 1px solid #e64833;
 }
-
+ 
 .contact-formbutton:hover{
     background-color: #c82614;
 }
-
+ 
 .contact-furtherdetails {
     margin-top: 30px;
     text-align: center;
     padding-top: 10px;
     border-top: #fff solid 1px;
 }
-
-
+ 
+ 
 .contact-furtherdetails h3 {
     color: #fff;
     margin-bottom: 20px;
 }
-
+ 
 .contact-furtherdetails p {
     color: #fff;
     margin-bottom: 20px;
 }
-
+ 
 .contact-submission {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
@@ -127,43 +127,129 @@
     margin-top: 200px;
     border: #e64833 2px solid;
 }
-
+ 
 .contact-submission p {
     font-size: 20px;
     margin-bottom: 20px;
 }
-
-
-
-@media (max-width:426px){
-    .contactus-main-container{
-        width:auto;
-        margin-left:80px;
-        margin-top:20px;
-        margin-bottom:20px;
-        margin-right:20px;
-    }
-
-    .contact-submission{
-        width:auto;
-        margin-top:100px;
-        margin-bottom:20px;
-    }
+ 
+/* ============================= */
+/* 📱 Responsive Contact Us Page */
+/* ============================= */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .contactus-form-container {
+    padding: 18px;
+    max-width: 450px;
+  }
+ 
+  .contactus-form input,
+  .contactus-form textarea {
+    font-size: 0.95em;
+  }
+ 
+  .contactus-form-container h2 {
+    font-size: 1.6em;
+  }
+ 
+  .contact-furtherdetails h3 {
+    font-size: 1.3em;
+  }
+ 
+  .contact-submission {
+    max-width: 350px;
+    margin-top: 150px;
+    padding: 18px;
+  }
 }
-
-@media (max-width: 780px) and (min-width: 426px) {
-    .contactus-main-container{
-        width:auto;
-        margin-left:80px;
-        margin-top:20px;
-        margin-bottom:20px;
-        margin-right:20px;
-    }
-
-    .contact-submission{
-        width:auto;
-        margin-top:100px;
-        margin-bottom:20px;
-    }
-
+ 
+/* Mobiles */
+@media (max-width: 600px) {
+  .contactus-main-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+  }
+ 
+  .contactus-form-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+ 
+  .contactus-form-container h2 {
+    font-size: 1.4em;
+  }
+ 
+  .contactus-form label {
+    font-size: 0.9em;
+  }
+ 
+  .contactus-form input,
+  .contactus-form textarea {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+ 
+  .contact-formbutton {
+    font-size: 0.95em;
+    padding: 8px;
+  }
+ 
+  .contact-furtherdetails h3 {
+    font-size: 1.1em;
+  }
+ 
+  .contact-furtherdetails p {
+    font-size: 0.9em;
+  }
+ 
+  .contact-submission {
+    max-width: 90%;
+    margin-top: 80px;
+    padding: 15px;
+  }
+ 
+  .contact-submission p {
+    font-size: 1em;
+  }
+}
+ 
+/* Small Mobiles */
+@media (max-width: 400px) {
+  .contactus-form-container {
+    padding: 12px;
+  }
+ 
+  .contactus-form-container h2 {
+    font-size: 1.2em;
+  }
+ 
+  .contactus-form input,
+  .contactus-form textarea {
+    font-size: 0.85em;
+    padding: 6px;
+  }
+ 
+  .contact-formbutton {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+ 
+  .contact-furtherdetails h3 {
+    font-size: 1em;
+  }
+ 
+  .contact-furtherdetails p {
+    font-size: 0.85em;
+  }
+ 
+  .contact-submission {
+    margin-top: 60px;
+    padding: 12px;
+  }
+ 
+  .contact-submission p {
+    font-size: 0.9em;
+  }
 }

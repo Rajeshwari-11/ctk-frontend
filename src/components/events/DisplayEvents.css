@@ -349,63 +349,95 @@
  
   }
  
-  @media (max-width: 780px) and (min-width: 426px) {
-    .expired-events-btn {
-      background-color: #e64833;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 110px; /* Set a fixed width */
-      text-align: center; /* Center the text inside the button */
-      overflow: hidden; /* Prevent text overflow */
-      white-space: nowrap; /* Prevent text wrapping */
-      font-size: 8px;
-    }
+ /* ===================== */
+/* 📱 Responsive Queries */
+/* ===================== */
  
-    .expired-events-btn:hover {
-      background-color: #d43a2a;
-    }
- 
- 
-    .event-header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between; /* Ensure proper spacing between elements */
-      align-items: center; /* Align items vertically */
-    }
- 
-    .header-title {
-      font-size: 20px;
-      flex-grow: 1; /* Allow the title to take up remaining space */
-      text-align: center; /* Center the title */
-    }
- 
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
- 
-    .event-card{
-      font-size: 10px;
-    }
- 
-    .update-event-btn,
-    .delete-event-btn {
-      font-size: 8px;
-    }
- 
+/* Tablets */
+@media (max-width: 1024px) {
+  .display-content-wrapper {
+    flex-direction: column;
+    height: auto;
   }
  
-  @media (max-width: 426px) {
-  .image-container {
-    height: 200px; /* smaller for mobile */
+  .filters-container {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+ 
+  .events-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+ 
+  .event-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .header-title {
+    font-size: 2rem;
+  }
+ 
+  .expired-events-btn {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
  
-@media (max-width: 768px) and (min-width: 426px) {
-  .image-container {
-    height: 220px;
+/* Mobiles */
+@media (max-width: 600px) {
+  .displayevents-main-container {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+ 
+  .filters-container {
+    flex-direction: column;
+    width: 100%;
+  }
+ 
+  .header-title {
+    font-size: 1.5rem;
+  }
+ 
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+ 
+  .event-card {
+    font-size: 12px;
+  }
+ 
+  .update-event-btn,
+  .delete-event-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+ 
+/* Small Mobiles */
+@media (max-width: 400px) {
+  .header-title {
+    font-size: 18px;
+  }
+ 
+  .expired-events-btn {
+    width: 100px;
+    font-size: 10px;
+    padding: 6px;
+  }
+ 
+  .event-card {
+    font-size: 10px;
+  }
+ 
+  .update-event-btn,
+  .delete-event-btn {
+    font-size: 9px;
+    padding: 4px 6px;
   }
 }

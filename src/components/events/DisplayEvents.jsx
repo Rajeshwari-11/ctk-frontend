@@ -52,7 +52,7 @@ const DisplayEvents = () => {
       })
         .then((response) => {
           if (!response.ok) {
-            console.log(response.json());
+            // console.log(response.json());
           }
           navigate("/event");
           navigate("/home");
