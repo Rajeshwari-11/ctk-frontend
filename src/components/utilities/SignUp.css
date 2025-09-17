@@ -5,66 +5,99 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    width: 100vw;   
+    width: 100vw;  
     position: relative;
     overflow-x: hidden;
 }
-
-
+ 
+ 
 .signup-maincontainer {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2.5rem;
-    
+   
 }
-
+ 
 .signup-formcontainer {
     padding:20px;
     width: 100%;
     max-width: 400px;
-    
+   
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
     border: #e64833 2px solid;
     color: #fff;
     border-radius: 10px;
 }
-
+ 
 .signup-button {
     background-color: #e64833;
     border-color: #e64833;
 }
-
-@media (max-width:426px)
-{
-    .signup-maincontainer{
-        width:auto;
-        margin-left:20px;
-        margin-right:-40px;
-        margin-top:20px;
-        margin-bottom:20px;
-    }
-    .signup-formcontainer{
-        width:70%;
-        margin-left:20px;
-        margin-right:20px;
-    }
+ 
+/* ============================= */
+/* 📱 Responsive Signup Page */
+/* ============================= */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .signup-maincontainer {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+  }
+ 
+  .signup-formcontainer {
+    max-width: 360px;
+    padding: 18px;
+  }
 }
-
-@media (max-width: 780px) and (min-width: 426px) {
-  
-    .signup-maincontainer{
-        width:auto;
-        margin-left:20px;
-        margin-right:-40px;
-        margin-top:20px;
-        margin-bottom:20px;
-    }
-    .signup-formcontainer{
-        width:70%;
-        margin-left:20px;
-        margin-right:20px;
-    }
+ 
+/* Mobiles */
+@media (max-width: 600px) {
+  .signup-maincontainer {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding: 0 15px;
+  }
+ 
+  .signup-formcontainer {
+    max-width: 100%;
+    padding: 15px;
+  }
+ 
+  .signup-formcontainer h2 {
+    font-size: 1.4em;
+  }
+ 
+  .signup-formcontainer input,
+  .signup-formcontainer button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
+ 
+/* Small Mobiles */
+@media (max-width: 400px) {
+  .signup-maincontainer {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 10px;
+  }
+ 
+  .signup-formcontainer {
+    padding: 12px;
+  }
+ 
+  .signup-formcontainer h2 {
+    font-size: 1.2em;
+  }
+ 
+  .signup-formcontainer input,
+  .signup-formcontainer button {
+    font-size: 0.85em;
+    padding: 7px;
+  }
 }

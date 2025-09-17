@@ -9,7 +9,7 @@
     min-height: 100vh;
     width: 100vw;
 }
-
+ 
 .inbox-container {
     padding: 10px;
     margin-left: 80px;   /* Push content away from sidebar */
@@ -20,7 +20,7 @@
     box-sizing: border-box;
     width: 100vw;
 }
-
+ 
 .inbox-container h1 {
     text-align: center;
     font-weight: bolder;
@@ -28,25 +28,25 @@
     margin-bottom: 40px;
     font-size: 2.2rem;
 }
-
+ 
 .inbox-status {
     text-align: center;
     font-size: 1.2em;
     color: #ccc;
     margin-top: 20px;
 }
-
+ 
 .inbox-error {
     color: #d9534f;
     font-weight: bold;
 }
-
+ 
 .inbox-list {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
-
+ 
 .inbox-item {
     background-color: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(4px);
@@ -56,14 +56,14 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
     color: #fff;
-
+ 
     width: 100%;          /* full width inside container */
     margin-bottom: 20px;  /* spacing between enquiries */
 }
 .inbox-item:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
+ 
 .inbox-item-header {
     font-size: 1.3em;
     color: #fff;
@@ -71,19 +71,19 @@
     border-bottom: 1px solid #e64833;
     padding-bottom: 8px;
 }
-
+ 
 .inbox-item > p {
     margin: 10px 0;
     line-height: 1.6;
     color: #fff;
 }
-
+ 
 .inbox-item p strong {
     color: #e64833;
     min-width: 80px;
     display: inline-block;
 }
-
+ 
 .inbox-item-message {
     margin-top: 18px;
     background-color: #fff;
@@ -91,13 +91,13 @@
     border-radius: 6px;
     border: 1px solid #eee;
 }
-
+ 
 .inbox-item-message p {
     color: #000 !important;
     margin: 5px 0;
     white-space: pre-wrap;
 }
-
+ 
 .inbox-text-area {
     width: 100%;
     margin-top: 18px;
@@ -108,14 +108,14 @@
     font-size: 1rem;
     box-sizing: border-box;
 }
-
+ 
 .inbox-admin-reply-section {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
-
+ 
 .inbox-send-reply-button {
     padding: 10px 14px;
     background-color: #e64833;
@@ -127,12 +127,12 @@
     align-self: flex-end;
     transition: background 0.3s ease;
 }
-
+ 
 .inbox-send-reply-button:hover {
     background-color: #000;
     border: 1px solid #e64833;
 }
-
+ 
 .inbox-previous-reply {
     margin-top: 18px;
     padding: 12px;
@@ -140,34 +140,112 @@
     border-radius: 6px;
     border: 1px solid #e64833;
 }
-
+ 
 .inbox-previous-reply strong {
     color: #fff;
     display: block;
     margin-bottom: 6px;
 }
-
+ 
 .inbox-previous-reply p {
     color: #fff;
     white-space: pre-wrap;
 }
-
+ 
 .inbox-resolved-status {
     font-size: 0.95em;
     font-style: italic;
     color: #e64833 !important;
     margin-top: 12px;
 }
-
-/* 📱 Responsive tweaks */
-@media (max-width: 768px) {
-    .inbox-container {
-        padding: 20px;
-    }
-    .inbox-container h1 {
-        font-size: 1.6rem;
-    }
-    .inbox-item {
-        padding: 15px;
-    }
+ 
+/* 📩 Responsive Inbox Page */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .inbox-container {
+    margin-left: 60px;
+    margin-right: 15px;
+    width: calc(100% - 75px);
+  }
+ 
+  .inbox-container h1 {
+    font-size: 1.8rem;
+  }
+ 
+  .inbox-item-header {
+    font-size: 1.1em;
+  }
+ 
+  .inbox-text-area {
+    font-size: 0.95rem;
+  }
 }
+ 
+/* Mobiles */
+@media (max-width: 768px) {
+  .inbox-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
+  }
+ 
+  .inbox-container h1 {
+    font-size: 1.6rem;
+  }
+ 
+  .inbox-item {
+    padding: 15px;
+  }
+ 
+  .inbox-item-header {
+    font-size: 1em;
+  }
+ 
+  .inbox-text-area {
+    min-height: 80px;
+    font-size: 0.9rem;
+  }
+ 
+  .inbox-send-reply-button {
+    width: 100%; /* Full-width button for easier tapping */
+    align-self: center;
+  }
+}
+ 
+/* Small Mobiles */
+@media (max-width: 480px) {
+  .inbox-container {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+ 
+  .inbox-container h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+ 
+  .inbox-item {
+    padding: 12px;
+  }
+ 
+  .inbox-item-header {
+    font-size: 0.95em;
+  }
+ 
+  .inbox-item p {
+    font-size: 0.9em;
+  }
+ 
+  .inbox-text-area {
+    font-size: 0.85rem;
+    min-height: 70px;
+  }
+ 
+  .inbox-send-reply-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+ 
+ 

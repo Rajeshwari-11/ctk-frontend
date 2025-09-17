@@ -201,4 +201,4 @@ const ViewFeedback = () => {
     );
 }
 
-export default ViewFeed;
+export default ViewFeedback;

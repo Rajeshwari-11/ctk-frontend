@@ -9,7 +9,7 @@
     position: relative;
     overflow-x: hidden;
 }
-
+ 
 .loading-message{
     background-color: rgba(0, 0, 0, 0.8);
     color:#fff;
@@ -22,7 +22,7 @@
     margin-top:200px;
     padding:10px
 }
-
+ 
 .error-message-container{
     background-color: rgba(0, 0, 0, 0.8);
     color:#fff;
@@ -34,8 +34,8 @@
     margin-left:400px;
     margin-top:200px;
     padding:10px
-} 
-
+}
+ 
 .success-message-container{
     background-color: rgba(0, 0, 0, 0.8);
     color:#fff;
@@ -48,7 +48,7 @@
     margin-top:200px;
     padding:10px
 }
-
+ 
 .update-event-container {
     width: 50%;
     margin: 0 auto;
@@ -146,25 +146,89 @@
     color: #dc3545;
 }
  
-@media (max-width:426px){
-    .update-event-container{
-        width:auto;
-        margin-left:80px;
-        margin-top:20px;
-        margin-right:20px;
-        margin-bottom:20px;
-        padding: 0px;
-    }
-
+/* 📅 Responsive Update Event Page */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .update-event-container {
+    width: 70%;
+    padding: 15px;
+  }
+ 
+  .update-event-heading {
+    font-size: 32px;
+  }
+ 
+  .loading-message,
+  .error-message-container,
+  .success-message-container {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+  }
 }
-
-@media (max-width: 780px) and (min-width: 426px) {
-    .update-event-container{
-        width:auto;
-        margin-left:80px;
-        margin-top:20px;
-        margin-right:20px;
-        margin-bottom:20px;
-        padding: 0px;
-    }
+ 
+/* Mobiles */
+@media (max-width: 768px) {
+  .update-event-container {
+    width: 90%;
+    padding: 15px;
+  }
+ 
+  .update-event-heading {
+    font-size: 26px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+ 
+  .update-event-form {
+    gap: 12px;
+    padding: 15px;
+  }
+ 
+  .loading-message,
+  .error-message-container,
+  .success-message-container {
+    width: 80%;
+    margin: 100px auto 0 auto;
+    font-size: 18px;
+    padding: 12px;
+  }
 }
+ 
+/* Small Mobiles */
+@media (max-width: 480px) {
+  .update-event-container {
+    width: 95%;
+    padding: 12px;
+  }
+ 
+  .update-event-heading {
+    font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+ 
+  .update-event-input,
+  .update-event-textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+ 
+  .update-event-button {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+ 
+  .loading-message,
+  .error-message-container,
+  .success-message-container {
+    width: 90%;
+    margin: 80px auto 0 auto;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+ 

@@ -8,7 +8,7 @@
     position: relative;
     overflow-x: hidden;
 }
-
+ 
 .event-details-container{
   margin-top: 40px;
   margin-left: 80px;
@@ -34,7 +34,7 @@
   /* object-fit: contain; ✅ shows whole image */
   border-radius: 8px;
 }
-
+ 
 .event-details-info {
   width: 70%;
   height: 400px;
@@ -64,12 +64,12 @@
   line-height: 1.5;
   text-align: justify;
 }
-
+ 
 .event-details{
   display: flex;
   flex-flow: row;
 }
-
+ 
 .event-buttons {
   display: flex;
   justify-content: space-between;
@@ -90,7 +90,7 @@
 .event-buttons .back-button:hover {
   background-color: #E64833;
 }
-
+ 
 .event-buttons .action-button {
   padding: 10px 20px;
   background-color: #000000bb;
@@ -100,7 +100,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+ 
 .event-buttons .action-button:hover {
   background-color: #E64833;
 }
@@ -121,48 +121,83 @@
 .expired-events-btn{
   margin-right: 20px;
 }
-
-@media (max-width:426px){
-  .event-details-top{
+ 
+/* ============================= */
+/* 📱 Responsive Event Details Page */
+/* ============================= */
+ 
+/* Tablets */
+@media (max-width: 1024px) {
+  .event-details-container {
+    margin: 20px;
+    padding: 15px;
+  }
+ 
+  .event-details-top {
     flex-direction: column;
+    align-items: center;
   }
-
-  .event-details-image{
-    width:100%;
+ 
+  .event-details-image {
+    width: 100%;
+    height: auto; /* Let image scale naturally */
+    max-height: 350px;
+    object-fit: contain;
   }
-
-  .event-details-info,
-  .event-details-info p{
-    width:100%;
+ 
+  .event-details-info {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+ 
+/* Mobiles */
+@media (max-width: 600px) {
+  .event-details-container {
+    margin: 15px;
+    padding: 12px;
+  }
+ 
+  .event-details-info h2 {
+    font-size: 1.3rem;
+  }
+ 
+  .event-description {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+ 
+  .event-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+ 
+  .event-buttons button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+ 
+/* Small Mobiles */
+@media (max-width: 400px) {
+  .event-details-container {
+    margin: 10px;
+    padding: 10px;
+  }
+ 
+  .event-details-info h2 {
+    font-size: 1.1rem;
+  }
+ 
+  .event-description {
     font-size: 13px;
   }
-
-  .event-buttons{
-    margin-top: 5px;
-    gap:5px;
+ 
+  .event-buttons button {
+    font-size: 0.8rem;
+    padding: 8px;
   }
-
-
 }
-
-@media (max-width: 780px) and (min-width: 426px) {
-  .event-details-top{
-    flex-direction: row;
-  }
-
-  .event-details-image{
-    width:50%;
-  }
-
-  .event-details-info,
-  .event-details-info p{
-    width:100%;
-    font-size: 13px;
-  }
-
-  .event-buttons{
-    margin-top: 5px;
-    gap:5px;
-  }
-
-}
+ 
+ 

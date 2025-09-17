@@ -1,4 +1,4 @@
-.profilepage {
+.profilepage{
   background-image: url('../../assets/background.jpg');
   background-size: cover;
   background-position: center;
@@ -9,7 +9,7 @@
   position: relative;
   overflow-x: hidden;
 }
-
+ 
 .profilepage-container {
   display: flex;
   flex-direction: column;
@@ -20,13 +20,13 @@
   padding-top: 100px;
   box-sizing: border-box;
 }
-
+ 
 .heading {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #000;
 }
-
+ 
 .profilepage-main-container {
   display: flex;
   flex-direction: column;
@@ -34,13 +34,13 @@
   max-width: 900px;
   gap: 20px;
 }
-
+ 
 .profilepage-top-section {
   display: flex;
   flex-direction: column;
   margin-top: -50px;
 }
-
+ 
 .profile-icon-container {
   width: 120px;
   height: 120px;
@@ -53,12 +53,12 @@
   flex-shrink: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
+ 
 .profile-icon {
   font-size: 6rem;
   color: #000;
 }
-
+ 
 .profile-card {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
@@ -71,11 +71,11 @@
   justify-content: space-between;
   color: #fff;
 }
-
+ 
 .personal-info-card-override {
   width: 100%;
 }
-
+ 
 .personal-info-content-wrapper {
   display: flex;
   align-items: center;
@@ -83,14 +83,14 @@
   margin-bottom: 20px;
   width: 100%;
 }
-
+ 
 .personal-info-details {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   text-align: center;
 }
-
+ 
 /* --- New button styles --- */
 .button-stack {
   display: flex;
@@ -98,7 +98,7 @@
   gap: 10px;
   margin-top: 15px;
 }
-
+ 
 .profile-action-button {
   padding:8px 16px;
   background-color: #e64833;
@@ -111,11 +111,11 @@
   min-width: 120px;
   text-align: center;
 }
-
+ 
 .profile-action-button:hover {
   background-color: #c53a2a;
 }
-
+ 
 .bottom-section {
   display: flex;
   flex-direction: row;
@@ -123,21 +123,21 @@
   gap: 20px;
   align-items: flex-start;
 }
-
+ 
 .bottom-card-layout {
   flex: 1 1 calc(50% - 10px);
   min-width: 300px;
   min-height: 70px;
   overflow: hidden;
 }
-
+ 
 .card-header {
   color: #e64833;
   margin: 0;
   font-size: 1.3rem;
   padding-bottom: 10px;
 }
-
+ 
 .card-header-with-arrow {
   display: flex;
   justify-content: space-between;
@@ -147,18 +147,18 @@
   border-bottom: 1px solid #333;
   margin-bottom: 10px;
 }
-
+ 
 .scrollable-content {
   max-height: 330px;
   overflow-y: auto;
   padding-right: 5px;
 }
-
+ 
 .arrow-icon {
   color: #e64833;
   font-size: 1.2rem;
 }
-
+ 
 .booked-item-container {
   background-color: #333;
   color: #fff;
@@ -170,16 +170,16 @@
   flex-direction: column;
   gap: 0px;
 }
-
+ 
 .item-line {
   width: 100%;
 }
-
+ 
 .item-detail-text {
   margin: 0;
   font-size: 0.95rem;
 }
-
+ 
 .action-and-date-container {
   display: flex;
   flex-direction: column;
@@ -188,7 +188,7 @@
   margin-top: 10px;
   width: 100%;
 }
-
+ 
 .cancel-button {
   padding: 6px 12px;
   background-color: #e64833;
@@ -200,7 +200,7 @@
   transition: background-color 0.3s ease;
   align-self: flex-start;
 }
-
+ 
 .centered-message {
   display: flex;
   justify-content: center;
@@ -209,16 +209,16 @@
   color: #000;
   text-align: center;
 }
-
+ 
 .message-text {
   margin: 10px 0;
   color: #fff;
 }
-
+ 
 .message-text.error {
   color: #dc3545;
 }
-
+ 
 .inline-button {
   background-color: transparent;
   border: none;
@@ -228,7 +228,7 @@
   text-decoration: underline;
   font-size: inherit;
 }
-
+ 
 .feedback-item-container {
   background-color: #333;
   color: #fff;
@@ -237,27 +237,27 @@
   margin-bottom: 10px;
   box-sizing: border-box;
 }
-
+ 
 .feedback-item-text {
   margin: 0 0 5px 0;
   font-size: 0.95rem;
 }
-
+ 
 .feedback-item-date {
   margin: 0;
   font-size: 0.85rem;
   color: #ccc;
 }
-
+ 
 .star-filled {
   color: #eeff07;
 }
-
+ 
 .star-empty {
   color: #ccc;
 }
-
-
+ 
+ 
 .users-table-container {
   max-height: 250px;   /* Controls vertical height */
   overflow-y: auto;    /* Only vertical scroll */
@@ -268,13 +268,13 @@
   width: 100%;         /* Ensure container spans full width */
   box-sizing: border-box;
 }
-
+ 
 .users-table {
   width: 100%;          /* Make table fit container width */
   border-collapse: collapse;
   table-layout: fixed;  /* Prevent table from overflowing */
 }
-
+ 
 .users-table th,
 .users-table td {
   border: 1px solid #fff;
@@ -285,7 +285,7 @@
   overflow: hidden;      /* Hide overflowing content */
   text-overflow: ellipsis; /* Add "..." when text overflows */
 }
-
+ 
 /* Users List Header */
 .users-header {
   display: flex;
@@ -293,7 +293,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
-
+ 
 .users-close-button {
   background: transparent;
   color: #e64833;
@@ -301,4 +301,91 @@
   font-size: 20px;
   cursor: pointer;
 }
-
+ 
+/* ----- Responsive Styles via Media Queries ----- */
+/* ----- Extra Responsive Styles via Media Queries ----- */
+ 
+/* Tablets - up to 768px */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+ 
+  .profilepage-top-section {
+    margin-top: -20px;
+    align-items: center;
+  }
+ 
+  .personal-info-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+ 
+  .personal-info-details {
+    text-align: center;
+  }
+ 
+  .bottom-section {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .bottom-card-layout {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+ 
+  .users-table-container {
+    max-height: 200px;
+  }
+}
+ 
+/* Mobile devices - up to 480px */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.4rem;
+  }
+ 
+  .profile-icon-container {
+    width: 70px;
+    height: 70px;
+  }
+ 
+  .profile-icon {
+    font-size: 4rem;
+  }
+ 
+  .profile-card {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+ 
+  .profile-action-button {
+    font-size: 14px;
+    min-width: 100px;
+    padding: 6px 12px;
+  }
+ 
+  .card-header {
+    font-size: 1.1rem;
+  }
+ 
+  .item-detail-text,
+  .feedback-item-text {
+    font-size: 0.85rem;
+  }
+ 
+  .feedback-item-date {
+    font-size: 0.75rem;
+  }
+ 
+  .users-table th,
+  .users-table td {
+    font-size: 0.75rem;
+    padding: 6px;
+  }
+}
+ 
+ 
