@@ -9,7 +9,7 @@
     position: relative;
     overflow-x: hidden;
 }
-
+ 
 .view-feedbacks-container {
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
@@ -26,7 +26,7 @@
     color:#fff;
     text-align: center;
 }
-
+ 
 .view-feedbacks-container h1 {
     font-family: Helvetica, sans-serif;
     font-size: 2.5em;
@@ -34,7 +34,7 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
+ 
 .feedback-summary {
     display: flex;
     flex-direction: row;
@@ -45,7 +45,7 @@
     margin-bottom: 30px;
     gap: 20px;
 }
-
+ 
 .average-rating-card {
     background-color: #ffffff;
     opacity: 0.9;
@@ -55,7 +55,7 @@
     height: 300px;
     width: 50%;
 }
-
+ 
 .avg-rating-header {
     background-color: #e64833;
     color: #ffffff;
@@ -64,7 +64,7 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
-
+ 
 .pie-chart-card {
     background-color: #ffffff;
     opacity: 0.9;
@@ -75,7 +75,7 @@
     width: 50%;
     padding-bottom: 20px;
 }
-
+ 
 .pie-chart-header {
     background-color: #e64833;
     color: #ffffff;
@@ -85,30 +85,30 @@
     border-top-left-radius: 5px;
     width: 100%;
 }
-
+ 
 .avg-rating-value {
     font-size: 5em;
     font-weight: bold;
     color: #4CAF50;
     margin: 10px 0;
 }
-
+ 
 .total-reviews-count {
     font-size: 0.9em;
     color: #777;
 }
-
+ 
 .pie-chart-card {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
+ 
+ 
 .all-reviews-section {
     text-align: center;
 }
-
+ 
 .all-reviews-section h2 {
     font-size: 3rem;
     color: #ffffff;
@@ -120,7 +120,7 @@
     display: grid;
     gap: 20px;
 }
-
+ 
 .review-card {
     background-color: #fff;
     border: 1px solid #eee;
@@ -128,7 +128,7 @@
     padding: 15px 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-
+ 
 .review-header {
     display: flex;
     justify-content: space-between;
@@ -137,139 +137,54 @@
     font-weight: bold;
     color: #444;
 }
-
+ 
 .review-rating {
     display: flex;
     align-items: center;
     gap: 5px;
     color: black;
 }
-
+ 
 .star {
     font-size: 1.2em;
 }
-
+ 
 .filled-star {
     color: gold;
 }
-
+ 
 .empty-star {
     color: lightgray;
 }
-
+ 
 .review-author {
     font-weight: normal;
     color: #777;
     font-size: 0.9em;
 }
-
+ 
 .review-comment {
     color: #555;
     line-height: 1.5;
 }
-
+ 
 .error-message {
     color: #d9534f;
     text-align: center;
     font-size: 1.1em;
     margin-top: 20px;
 }
-
+ 
 .p {
     text-align: center;
     color: #666;
 }
-
-@media (max-width:426px) {
-
-    .view-feedbacks-container {
-        margin-top: 20px;
-        margin-left: 80px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-
-    .view-feedbacks-container h1 {
-        font-size: 30px;
-    }
-
-    .feedback-summary {
-        margin: 0;
-    }
-
-    .average-rating-card {
-        height: 200px;
-    }
-
-    .avg-rating-header h2,
-    .pie-chart-header h2 {
-        font-size: 20px;
-    }
-
-    .avg-rating-value {
-        font-size: 30px;
-    }
-
-    .pie-chart-card {
-        height: 200px;
-        /* Reduce height */
-        width: 100%;
-        /* Full width for mobile */
-    }
-
-    .pie-chart-header h2 {
-        font-size: 16px;
-        /* Reduce font size */
-    }
-}
-
-@media (max-width: 780px) and (min-width: 426px) {
-    .view-feedbacks-container {
-        margin-top: 20px;
-        margin-left: 80px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
-
-    .view-feedbacks-container h1 {
-        font-size: 30px;
-    }
-
-    .feedback-summary {
-        margin: 0;
-    }
-
-    .average-rating-card {
-        height: 200px;
-    }
-
-    .avg-rating-header h2,
-    .pie-chart-header h2 {
-        font-size: 20px;
-    }
-
-    .avg-rating-value {
-        font-size: 30px;
-    }
-
-    .pie-chart-card {
-        height: 200px;
-        /* Reduce height */
-        width: 100%;
-        /* Full width for mobile */
-    }
-
-    .pie-chart-header h2 {
-        font-size: 16px;
-        /* Reduce font size */
-    }
-
-}
+ 
 .all-reviews-list {
     display: grid;
     gap: 20px;
 }
-
+ 
 .review-card {
     background-color: #fff;
     border: 1px solid #eee;
@@ -278,13 +193,13 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     text-align: center;   /* ✅ centers everything */
 }
-
+ 
 .review-username {
     color: black;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+ 
 .review-rating {
     margin: 10px 0;
     font-weight: bold;
@@ -294,21 +209,135 @@
     align-items: center;
     gap: 5px; /* spacing between stars and text */
 }
-
+ 
 .star {
     font-size: 1.2em;
 }
-
+ 
 .filled-star {
     color: gold;
 }
-
+ 
 .empty-star {
     color: lightgray;
 }
-
+ 
 .review-comment {
     color:black;
     line-height: 1.5;
     margin-top: 10px;
+}
+ 
+/* 📱 Tablets */
+@media (max-width: 1024px) {
+  .view-feedbacks-container {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 15px;
+  }
+ 
+  .feedback-summary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+ 
+  .average-rating-card,
+  .pie-chart-card {
+    width: 100%;
+    height: auto;
+  }
+ 
+  .avg-rating-value {
+    font-size: 4em;
+  }
+ 
+  .all-reviews-section h2 {
+    font-size: 2.5rem;
+  }
+}
+ 
+/* 📱 Small Tablets & Large Phones */
+@media (max-width: 768px) {
+  .view-feedbacks-container {
+    margin: 20px auto;
+    padding: 12px;
+  }
+ 
+  .view-feedbacks-container h1 {
+    font-size: 2rem;
+  }
+ 
+  .avg-rating-value {
+    font-size: 3em;
+  }
+ 
+  .all-reviews-section h2 {
+    font-size: 2rem;
+  }
+ 
+  .review-card {
+    padding: 12px;
+  }
+}
+ 
+/* 📱 Mobiles */
+@media (max-width: 480px) {
+  .view-feedbacks-container {
+    margin: 15px auto;
+    padding: 10px;
+  }
+ 
+  .view-feedbacks-container h1 {
+    font-size: 1.6rem;
+  }
+ 
+  .feedback-summary {
+    gap: 15px;
+  }
+ 
+  .avg-rating-value {
+    font-size: 2.2em;
+  }
+ 
+  .all-reviews-section h2 {
+    font-size: 1.6rem;
+  }
+ 
+  .review-card {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+ 
+  .review-rating {
+    font-size: 0.9rem;
+    gap: 3px;
+  }
+ 
+  .star {
+    font-size: 1em;
+  }
+}
+ 
+/* 🖥️ Extra Small Screens (≤ 360px) */
+@media (max-width: 360px) {
+  .view-feedbacks-container {
+    padding: 8px;
+  }
+ 
+  .view-feedbacks-container h1 {
+    font-size: 1.4rem;
+  }
+ 
+  .avg-rating-value {
+    font-size: 1.8em;
+  }
+ 
+  .all-reviews-section h2 {
+    font-size: 1.4rem;
+  }
+ 
+  .review-card {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
 }

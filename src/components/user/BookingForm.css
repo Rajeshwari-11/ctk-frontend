@@ -19,6 +19,94 @@
     align-items: center;
     min-height: calc(100vh - 100px); /* Adjust as needed */
 }
+
+
+
+/* --- Event details: stacked on mobile, columns on larger screens --- */
+.booking-form .event-details {
+  display: block;
+  flex-wrap: wrap;
+  gap: 14px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid #e64833;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+
+/* each cell */
+.booking-form .event-details .detail {
+  /* default: full width (stacked) */
+  flex: 1 1 100%;
+  min-width: 0; /* prevents overflow for long text */
+}
+
+/* ensure the text inside is block-level and spaced consistently */
+.booking-form .event-details .label {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  display: block;
+  word-break: break-word;
+}
+
+/* label and value styling */
+.booking-form .event-details .label strong {
+  color: #e64833;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.booking-form .event-details .value {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Larger screens: 3 columns (each detail side-by-side) */
+@media (min-width: 700px) {
+  .booking-form .event-details .detail {
+    flex: 0 0 calc(33.333% - 10px);
+  }
+}
+
+/* If some global CSS is stubborn, this enforces block layout (last resort) */
+.booking-form .event-details .label,
+.booking-form .event-details .label .value {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .event-details {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #e64833;
+  border-radius: 8px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  color: #fff;
+}
+
+.event-details p {
+  margin: 6px 0;    
+  font-size: 16px;
+  line-height: 1.5;
+} */
+
+
+
+
+ 
  
 .booking-form-container {
     background-color: rgba(0, 0, 0, 0.4);
@@ -31,6 +119,7 @@
     width: 100%;
     max-width: 500px;
 }
+
  
 .booking-form-container h1 {
     text-align: center;

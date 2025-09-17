@@ -10,14 +10,14 @@
     overflow-x: hidden;
     width: 100vw;
 }
-
+ 
 .feedback-main-container{
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+ 
 .feedback-form-container{
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(4px);
@@ -31,29 +31,29 @@
     width: 100%;
     max-width: 400px;
 }
-
+ 
 .feedback-form-container h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #fff;
 }
-
+ 
 .feedback-form {
     display: flex;
     flex-direction: column;
 }
-
+ 
 .feedback-form div {
     margin-bottom: 15px;
-
+ 
 }
-
+ 
 .feedback-form label {
     font-weight: bold;
     color: #fff;
     margin-bottom: 5px;
 }
-
+ 
 .feedback-form input {
     padding: 10px;
     border-radius: 5px;
@@ -63,20 +63,20 @@
     background-color: #ffffff;
     opacity: 0.8;
 }
-
+ 
 .feedback-form div>div{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-
+ 
 .feedback-form div>div>button{
     padding:0px;
     border:none;
     background: transparent;
 }
-
+ 
 .feedback-submission{
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(4px);
@@ -86,16 +86,88 @@
     border-radius: 10px;
     margin-top:15%;
 }
-
-@media (max-width:480px){
-    .feedback-form-container{
-        margin-left:80px;
-        margin-right:20px;
-    }
-
-    .feedback-submission{
-        margin-top:150px;
-        margin-left:80px;
-        margin-right:20px;
-    }
+ 
+/* 📱 Tablets */
+@media (max-width: 768px) {
+  .feedback-form-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 15px;
+  }
+ 
+  .feedback-form-container h2 {
+    font-size: 1.5rem;
+  }
+ 
+  .feedback-form input {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+ 
+  .feedback-submission {
+    width: 85%;
+    margin: 20px auto;
+    font-size: 1rem;
+  }
+}
+ 
+/* 📱 Small Mobiles */
+@media (max-width: 480px) {
+  .feedback-main-container {
+    padding: 10px;
+  }
+ 
+  .feedback-form-container {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+ 
+  .feedback-form-container h2 {
+    font-size: 1.3rem;
+  }
+ 
+  .feedback-form label {
+    font-size: 0.9rem;
+  }
+ 
+  .feedback-form input {
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+ 
+  .feedback-form div > div {
+    flex-direction: column; /* Stack buttons/icons vertically */
+    gap: 8px;
+  }
+ 
+  .feedback-submission {
+    width: 90%;
+    margin: 20px auto;
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+ 
+/* 🖥️ Ultra-small screens (≤ 360px) */
+@media (max-width: 360px) {
+  .feedback-form-container {
+    width: 100%;
+    padding: 10px;
+  }
+ 
+  .feedback-form-container h2 {
+    font-size: 1.1rem;
+  }
+ 
+  .feedback-form input {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+ 
+  .feedback-submission {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
 }

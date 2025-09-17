@@ -33,7 +33,7 @@ const BookingForm = () => {
 
   // Fetch event details
   useEffect(() => {
-    fetch(`http://3.7.246.87:8000/api/getevent/${id}`, {
+    fetch(`http://localhost:5555/api/getevent/${id}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const BookingForm = () => {
     const tickets = Number(formData.numberOfTickets || 1);
     const totalAmount = ticketPrice * tickets; // rupees
 
-    const orderRes = await fetch('http://3.7.246.87:8000/api/create-order', {
+    const orderRes = await fetch('http://localhost:5555/api/create-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amountInRupees: totalAmount })
@@ -126,7 +126,7 @@ const BookingForm = () => {
         },
         handler: async (response) => {
           // 3) Verify payment
-          const verifyRes = await fetch('http://3.7.246.87:8000/api/verify-payment', {
+          const verifyRes = await fetch('http://localhost:5555/api/verify-payment', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(response),
@@ -135,7 +135,7 @@ const BookingForm = () => {
 
           if (verify.ok) {
             // 4) Save booking
-            await fetch(`http://3.7.246.87:8000/api/bookevents/${id}`, {
+            await fetch(`http://localhost:5555/api/bookevents/${id}`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -145,7 +145,7 @@ const BookingForm = () => {
             });
 
             // 5) Send ticket email 🎟️
-                await fetch('http://3.7.246.87:8000/api/send-booking-email', {
+                await fetch('http://localhost:5555/api/send-booking-email', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({
@@ -201,11 +201,32 @@ const totalAmount = ticketPrice * tickets; // total
         {!showConfirmation ? (
           <div className="booking-form-container">
             <h1>Book Your Ticket Here</h1>
-            <form className="booking-form" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="eventName">Event Name</label>
-                <input type="text" id="eventName" name="eventName" value={formData.eventName} readOnly />
-              </div>
+            <form className="booking-form" onSubmit={handleSubmit}><br />
+            <div className="event-details">
+  <div className="detail">
+    <span className="label"><strong>Event Name:</strong></span>
+    <span className="value">{formData.eventName || '—'}</span>
+  </div>
+
+  <div className="detail">
+    <span className="label"><strong>Event Date:</strong></span>
+    <span className="value">
+      {event?.eventDate
+        ? moment(event.eventDate).format('YYYY-MM-DD')
+        : formData.eventDate
+        ? moment(formData.eventDate).format('YYYY-MM-DD')
+        : '—'}
+    </span>
+  </div>
+
+  <div className="detail">
+    <span className="label"><strong>Ticket Price:</strong></span>
+    <span className="value">₹{ticketPrice}</span>
+  </div>
+</div>
+
+
+
               
               <div>
                 <label htmlFor="userName">Name</label>
@@ -262,7 +283,7 @@ const totalAmount = ticketPrice * tickets; // total
                 />
                 {errors.numberOfTickets && <div className="text-danger">{errors.numberOfTickets}</div>}
               </div>
-              <div>
+              {/* <div>
                 <label htmlFor="bookingDate">Event Date</label>
                 <input
                   type="date"
@@ -272,10 +293,10 @@ const totalAmount = ticketPrice * tickets; // total
                   value={moment(event.eventDate).format('YYYY-MM-DD')}
                   readOnly
                 />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <p><strong>Ticket Price:</strong> ₹{ticketPrice}</p>
-              </div>
+              </div> */}
               <div>
                 <button type="submit" className="booking-formbutton">Book Ticket</button>
               </div>
