@@ -18,7 +18,7 @@ const DisplayEvents = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://3.7.246.87:8000/api/getevents", {
+        const response = await fetch("http://65.1.11.160:8000/api/getevents", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -43,7 +43,7 @@ const DisplayEvents = () => {
   const handleDeleteClick = (e, id) => {
     e.stopPropagation();
     if (window.confirm("Do you want to delete this event?")) {
-      fetch(`http://3.7.246.87:8000/api/delete/${id}`, {
+      fetch(`http://65.1.11.160:8000/api/delete/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

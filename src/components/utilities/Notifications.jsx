@@ -16,7 +16,7 @@ function Notifications({ refreshTrigger }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://3.7.246.87:8000/api/get-notification', {
+      const response = await fetch('http://65.1.11.160:8000/api/get-notification', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

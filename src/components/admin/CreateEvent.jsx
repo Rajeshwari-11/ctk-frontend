@@ -45,7 +45,7 @@ const CreateEvent = () => {
       const formData = new FormData();
       formData.append("eventImage", eventImage);
 
-      const response = await fetch('http://3.7.246.87:8000/api/upload', {
+      const response = await fetch('http://65.1.11.160:8000/api/upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem("jwt_token")}`,
@@ -76,7 +76,7 @@ const CreateEvent = () => {
     }
 
     try {
-      const response = await fetch("http://3.7.246.87:8000/api/create", {
+      const response = await fetch("http://65.1.11.160:8000/api/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

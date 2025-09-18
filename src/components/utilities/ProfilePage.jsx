@@ -38,7 +38,7 @@ const ProfilePage = () => {
       if (!confirmCancel) return;
 
       try {
-        const response = await fetch(`http://3.7.246.87:8000/api/cancelticket/${bookingId}`, {
+        const response = await fetch(`http://65.1.11.160:8000/api/cancelticket/${bookingId}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const ProfilePage = () => {
           return;
         }
 
-        const response = await fetch("http://3.7.246.87:8000/api/profilepage", {
+        const response = await fetch("http://65.1.11.160:8000/api/profilepage", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const ProfilePage = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("jwt_token");
-      const response = await fetch("http://3.7.246.87:8000/api/get-users", {
+      const response = await fetch("http://65.1.11.160:8000/api/get-users", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

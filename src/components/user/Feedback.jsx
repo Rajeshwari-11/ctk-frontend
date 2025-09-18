@@ -23,7 +23,7 @@ const Feedback = () => {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await fetch(`http://3.7.246.87:8000/api/getevent/${id}`, {
+        const response = await fetch(`http://65.1.11.160:8000/api/getevent/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const Feedback = () => {
     event.preventDefault();
     const fetchPostFeedback = async () => {
       try {
-        const response = await fetch(`http://3.7.246.87:8000/api/feedback`, {
+        const response = await fetch(`http://65.1.11.160:8000/api/feedback`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

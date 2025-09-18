@@ -24,7 +24,7 @@ function ContactUs() {
     event.preventDefault();
     const fetchPostContact = async () => {
       try {
-        const response = await fetch(`http://3.7.246.87:8000/api/contact-post`, {
+        const response = await fetch(`http://65.1.11.160:8000/api/contact-post`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
